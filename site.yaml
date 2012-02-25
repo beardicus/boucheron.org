@@ -23,6 +23,12 @@ context:
     data:
         full_url: http://boucheron.org
 
+# tweak markdown
+markdown:
+  extensions:
+    - codehilite
+    - extra
+
 # default metadata
 meta:
     nodemeta: meta.yaml
