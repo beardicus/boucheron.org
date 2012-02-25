@@ -1,4 +1,5 @@
 deploy/
+.hyde_deps
 
 # Numerous always-ignore extensions
 *.diff
