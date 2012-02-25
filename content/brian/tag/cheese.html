@@ -1,0 +1,9 @@
+---
+extends: false
+
+---
+
+{% set tag = site.tagger.tags['cheese'] %}
+{% set source = site.content.node_from_relative_path('brian') %}
+{% set walker = source['walk_resources_tagged_with_cheese'] %}
+{% extends "tagged_posts.j2" %}

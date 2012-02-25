@@ -1,0 +1,10 @@
+/* humanstxt.org */
+
+/* TEAM */
+  Just me, Brian Boucheron
+  Site: http://boucheron.org/brian
+  Twitter: @bert_m_b
+
+/* SITE */
+  Standards: Derp
+  Software: Hyde
