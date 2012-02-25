@@ -2,7 +2,7 @@ mode: development
 media_root: media
 media_url: /media
 base_url: /
-
+full_url: http://boucheron.org/
 # add thine plugins
 plugins:
     - hyde.ext.plugins.meta.MetaPlugin
@@ -21,7 +21,7 @@ simple_copy:
 # context data
 context:
     data:
-        base: http://boucheron.org
+        full_url: http://boucheron.org
 
 # default metadata
 meta:
@@ -35,6 +35,7 @@ urlcleaner:
         - index.html
     strip_extensions:
         - html
+        - xml
     append_slash: true
 
 # define a time-based sorter

@@ -4,11 +4,13 @@ from fabric.api import *
 def clean():
     local('rm -rf ./deploy')
 
-def test():
+def gen():
     clean()
     local('hyde gen')
-    local('hyde serve &')
-    local('google-chrome http://localhost:8080')
+
+def test():
+    gen()
+    local('hyde serve')
 
 def publish():
     clean()

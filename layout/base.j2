@@ -15,7 +15,7 @@
   <meta name="viewport" content="width=device-width">
 
   <link rel="stylesheet" href="/media/css/style.css">
-  <link rel="alternate" type="application/atom+xml" title="Brian Boucheron RSS Feed" href="http://boucheron.org/brian/feed" />
+  {% block feed %}<link rel="alternate" type="application/atom+xml" title="Brian Boucheron RSS Feed" href="http://boucheron.org/brian/feed" />{% endblock feed %}
 
   <!-- All JavaScript at the bottom, except this Modernizr build.
        Modernizr enables HTML5 elements & feature detects for optimal performance.
@@ -23,21 +23,22 @@
   <script src="/media/js/libs/modernizr-2.5.3.min.js"></script>
 </head>
 <body>
+  {% block body %}
   <!-- Prompt IE 6 users to install Chrome Frame. Remove this if you support IE 6.
        chromium.org/developers/how-tos/chrome-frame-getting-started -->
   <!--[if lt IE 7]><p class=chromeframe>Your browser is <em>ancient!</em> <a href="http://browsehappy.com/">Upgrade to a different browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to experience this site.</p><![endif]-->
+  
+  {% block content %}
   <header>
-    <p>header</p>
+    {% block header %}{% endblock header %}
   </header>
   <div role="main">
-    {% block main %}
-    {% endblock main %}
-    
+    {% block main %}{% endblock main %}
   </div>
   <footer>
-    <p>footer</p>
+    {% block footer %}{% endblock footer %}
   </footer>
-
+  {% endblock content %}
   <!-- JavaScript at the bottom for fast page loading -->
 
   <!-- Grab Google CDN's jQuery, with a protocol relative URL; fall back to local if offline -->
@@ -48,6 +49,7 @@
   <script src="/media/js/plugins.js"></script>
   <script src="/media/js/script.js"></script>
   <!-- end scripts -->
+
 {% if site.config.mode == "production" %}
   <!-- Asynchronous Google Analytics snippet. Change UA-XXXXX-X to be your site's ID.
        mathiasbynens.be/notes/async-analytics-snippet -->
@@ -58,5 +60,7 @@
     s.parentNode.insertBefore(g,s)}(document,'script'));
   </script>
 {% endif %}
+
+{% endblock body %}
 </body>
 </html>

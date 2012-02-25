@@ -24,10 +24,13 @@
 
 <!-- Yonder Actual Content -->
 {% filter markdown|typogrify -%}
-{% mark post -%}
-{% block post -%}{%- endblock %}
-{%- endmark %}
+{% mark post %}
+{% block post %}{% endblock %}
+{% endmark %}
 {%- endfilter %}
+{% mark donkey %}
+Yargh!
+{% endmark %}
 
 <!-- End Yonder Content -->
     </article>
