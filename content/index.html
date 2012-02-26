@@ -2,11 +2,10 @@
 extends: base.j2
 listable: false
 ---
-{% block feed %}{%endblock feed %}
-
-{% block title %}boucheron.org{% endblock title %}
-
+{% block feed %}{%endblock feed %}   
+{% block title %}{% endblock title %}
+{% block header %}{% endblock header %}
+{% block footer %}{% endblock footer %}
 {% block content %}
-<p>Yohoyhoy</p>
-{% include "analytics.j2" %}
+<p></p>
 {% endblock content %}
