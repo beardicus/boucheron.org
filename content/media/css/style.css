@@ -218,12 +218,20 @@ td { vertical-align: top; }
    Author:
    ========================================================================== */
 
+body { font: 400 14px/22px "merriweather"; }
+div[role='main'] {
+    width: 640px;
+    position: absolute;
+    left: 50px;
+}
+h2 { font: 900 48px/22px "merriweather"; }
 
+a { color: #000; }
+a:visited { color: #333; }
+a:hover { color: #666; }
+a:focus { outline: thin dotted; }
 
-
-
-
-
+img { padding: 10px 0px }
 
 
 
