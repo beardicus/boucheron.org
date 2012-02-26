@@ -196,6 +196,7 @@ class TaggerPlugin(Plugin):
         archive_text = u"""
 ---
 extends: false
+title: %(title)s
 %(meta)s
 ---
 
@@ -206,6 +207,7 @@ extends: false
 """
         for tagname, tag in self.site.tagger.tags.to_dict().iteritems():
             tag_data = {
+                "title": tagname,
                 "tag": tagname,
                 "cleantag": re.sub(r"-", '_', tagname),
                 "node": source.name,

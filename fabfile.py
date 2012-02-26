@@ -8,7 +8,7 @@ def gen():
     clean()
     local('hyde gen')
 
-def test():
+def serve():
     gen()
     local('hyde serve')
 

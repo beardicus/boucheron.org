@@ -2,7 +2,7 @@ mode: development
 media_root: media
 media_url: /media
 base_url: /
-full_url: http://boucheron.org/
+
 # add thine plugins
 plugins:
     - hyde.ext.plugins.meta.MetaPlugin
@@ -19,9 +19,9 @@ simple_copy:
     - media/js/*.js
 
 # context data
-context:
-    data:
-        full_url: http://boucheron.org
+#context:
+#    data:
+
 
 # tweak markdown
 markdown:
@@ -61,7 +61,7 @@ tagger:
         blog:
             source: brian
             target: brian/tag
-            template: tagged_posts.j2
+            template: listing.j2
             archive_extension: html
             meta.listable: false
 

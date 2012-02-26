@@ -1,9 +1,10 @@
 ---
 extends: false
+title: sunday
 
 ---
 
 {% set tag = site.tagger.tags['sunday'] %}
 {% set source = site.content.node_from_relative_path('brian') %}
 {% set walker = source['walk_resources_tagged_with_sunday'] %}
-{% extends "tagged_posts.j2" %}
+{% extends "listing.j2" %}

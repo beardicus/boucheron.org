@@ -1,9 +1,10 @@
 ---
 extends: false
+title: permaculture
 
 ---
 
 {% set tag = site.tagger.tags['permaculture'] %}
 {% set source = site.content.node_from_relative_path('brian') %}
 {% set walker = source['walk_resources_tagged_with_permaculture'] %}
-{% extends "tagged_posts.j2" %}
+{% extends "listing.j2" %}

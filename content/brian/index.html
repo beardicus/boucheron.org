@@ -9,9 +9,9 @@ listable: false
 
 {% for post in resource.node.walk_resources_sorted_by_time()|top(5) %}
 <div>
-<h3><a href="{{ content_url(post.url) }}">{{ post.meta.title }}</a></h3>
+<h2><a href="{{ content_url(post.url) }}">{{ post.meta.title }}</a></h2>
 <p>{{ post.meta.created }}</p>
 {% refer to post.relative_path as content %}
-{{ content.post|markdown }}
+{{ content.post|markdown|typogrify }}
 </div>
 {% endfor %}

@@ -9,7 +9,7 @@
     <updated>{{ time_now|xmldatetime }}</updated>
     <id>{{ content_url(resource.url) }}/</id>
     
-    {% for post in resource.node.walk_resources_sorted_by_time() %}
+    {% for post in resource.node.walk_resources_sorted_by_time()|top(10) %}
         <entry>
             <title type="html">{{ post.meta.title }}</title>
             <author><name>{{ post.meta.author }}</name></author>
@@ -20,7 +20,7 @@
             <content type="html">
                 {% filter forceescape -%}
                     {% refer to post.relative_path as content %}
-                    {{ content.post|markdown }}
+                    {{ content.post|markdown|typogrify }}
                 {%- endfilter %}
             </content>
         </entry>
