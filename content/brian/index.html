@@ -8,10 +8,13 @@ listable: false
 
 
 {% for post in resource.node.walk_resources_sorted_by_time()|top(5) %}
-<div>
-<h2><a href="{{ content_url(post.url) }}">{{ post.meta.title }}</a></h2>
-<p>{{ post.meta.created }}</p>
+<article class="post">
+<h2><a href="{{ content_url(post.url) }}" title="Permanent Link to {{ post.meta.title }}">{{ post.meta.title }}</a></h2>
 {% refer to post.relative_path as content %}
 {{ content.post|markdown|typogrify }}
-</div>
+<p class="metadata"><time datetime="{{ resource.meta.created.strftime('%Y-%m-%d') }}">Posted <a href="{{ content_url(post.url) }}" title="Permanent Link to {{ post.meta.title }}">{{ post.meta.created.strftime('%B %d, %Y') }}</a></time> with tags 
+{% if post.meta.tags %}
+{% for tag in post.meta.tags %}<a href="{{ content_url('brian/tag/'~tag|slugify~'.html') }}">{{ tag }}</a>{% if not loop.last %}, {% endif %}{% endfor %}
+{% endif %}</p>
+</article>
 {% endfor %}

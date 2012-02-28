@@ -3,7 +3,7 @@
     <article class="post">
         <h2 class="title"><a href="{{ content_url(resource.url) }}">{{ resource.meta.title }}</a></h2>
         <time datetime="{{ resource.meta.created.strftime('%Y-%m-%d') }}">
-            Posted: {{ resource.meta.created.strftime('%a, %d %b %Y') }}
+            Posted: {{ resource.meta.created.strftime('%B %d, %Y') }}
         </time>
 {% if resource.meta.tags %}
         <ul class="tags">
@@ -19,10 +19,11 @@
 {% endfilter %}
 {% endmark %}
 
+</article>
+
 <!--<nav class="post_nav">
     <a class="prev{{' disabled' if not resource.prev_by_time }}" title="{{ resource.prev_by_time.meta.title }}" {% if resource.prev_by_time %} href="{{ content_url(resource.prev_by_time.url) }}"{% endif %}>Previous</a>
     <a class="next{{' disabled' if not resource.next_by_time }}" title="{{ resource.next_by_time.meta.title }}" {% if resource.next_by_time %} href="{{ content_url(resource.next_by_time.url) }}"{% endif %}>Next</a>
 </nav>-->
 
-</article>
 {%- endblock %}

@@ -42,8 +42,8 @@ body { margin: 0; font-size: 1em; line-height: 1.4; }
  * Also: hot pink! (or customize the background color to match your design)
  */
 
-::-moz-selection { background: #fe57a1; color: #fff; text-shadow: none; }
-::selection { background: #fe57a1; color: #fff; text-shadow: none; }
+::-moz-selection { background: #666; color: #fff; text-shadow: none; }
+::selection { background: #666; color: #fff; text-shadow: none; }
 
 
 /* =============================================================================
@@ -218,23 +218,54 @@ td { vertical-align: top; }
    Author:
    ========================================================================== */
 
-body { font: 400 14px/22px "merriweather"; }
+body {
+    font: 400 14px/22px "merriweather";
+    background: #fff;
+}
+
 div[role='main'] {
     width: 640px;
-    position: absolute;
-    left: 50px;
+    margin: 100px auto 20px;
 }
-h2 { font: 900 48px/22px "merriweather"; }
 
-a { color: #000; }
+article {
+    margin: 0px 0px 80px 0px;
+    background: #ffc;
+}
+
+header {
+    width: 640px;
+    margin: 0 auto;
+    background: #ffc;
+}
+
+h2 {
+    font: 900 48px/48px "merriweather";
+    margin: 0px;
+    margin-bottom: -5px;
+}
+
+a { color: #000; text-decoration: none;}
 a:visited { color: #333; }
 a:hover { color: #666; }
 a:focus { outline: thin dotted; }
 
-img { padding: 10px 0px }
+img { 
+    width: 640px;
+    height: 426px;
+}
 
+p {
+    margin: 10px 0px;
+}
 
-
+p.metadata {
+    border-top: 1px #eee dotted;
+    padding: 5px;
+    color: #ccc;
+    font: 400 12px/14px "merriweather";
+    margin: 0;
+}
 
 
 
