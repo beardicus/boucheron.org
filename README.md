@@ -1,4 +1,4 @@
-These are the innards of [http://boucheron.org/][1]. I'm currently using [hyde][] to generate said site and push it up to github.
+These are the innards of [http://boucheron.org/][1]. I'm currently using [hyde][] to generate said site and push it up to github pages.
 
 
 [1]: http://boucheron.org/
