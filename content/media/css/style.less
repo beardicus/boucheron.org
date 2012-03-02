@@ -1,21 +1,14 @@
-@highlight: #c00;
+@accent:        #c00;
+@accent_high:   lighten(@accent, 5%);
 
 body {
-    font: 400 14px/22px "merriweather";
-    background: #fff;
     background: url(/media/img/groovepaper.png);
-    border-left: 10px solid @highlight;
+    border-left: 10px solid @accent;
 }
 
 div[role='main'] {
     width: 640px;
-/*    margin: 200px auto 20px;*/
     margin: 0 auto;
-    padding-top: 0px;
-}
-
-article {
-    margin: 0px 0px 80px 0px;
 }
 
 header {
@@ -24,9 +17,15 @@ header {
     margin: 0 auto;
 }
 
+footer {
+    width: 640px;
+    padding: 50px 0;
+    margin: 0 auto;
+}
+
 h1 {
     font: 400 32px "merriweather";
-    color: @highlight;
+    color: @accent;
 }
 
 h1 span {
@@ -40,26 +39,40 @@ h2 {
     margin-bottom: -5px;
 }
 
-a { color: #000; text-decoration: none; font-weight: bold;}
+a         { color: #000; text-decoration: none; font-weight: bold;}
 a:visited { color: #333; }
-a:hover { color: #666; }
-a:focus { outline: thin dotted; }
+a:hover   { color: @accent_high; }
+a:focus   { outline: thin dotted; }
 
-p a { color: @highlight; text-decoration: underline }
-
-img { 
-    width: 640px;
-    height: 426px;
-}
-
-p {
-    margin: 10px 0px;
-}
-
-p.metadata {
-    border-top: 1px #eee dotted;
-    padding: 5px;
-    color: #ccc;
-    font: 400 12px/14px "merriweather";
-    margin: 0;
+article {
+    margin-bottom: 80px;
+    p {
+        margin: 10px 0px;
+        font: 400 14px/22px "merriweather";
+        a { color: @accent; text-decoration: underline }
+    }
+    div.metadata {
+        border-top: 1px #eee dotted;
+        padding: 5px;
+        color: #ccc;
+        font: 400 12px/14px "merriweather";
+        margin: 0;
+    }
+    img { 
+        width: 640px;
+        height: 426px;
+    }
+    p code {
+        font-family: Monaco, Andale Mono, Courier New, monospace;
+        font-size: 14px;
+        background-color: #ddd;
+        border-radius: 3px;
+        webkit-border-radius: 3px;
+        moz-border-radius: 3px;
+        padding: 1px 3px;
+    }
+    pre code {
+        font-family: Monaco, Andale Mono, Courier New, monospace;
+        font-size: 15px;
+    }
 }

@@ -12,9 +12,9 @@ listable: false
 <h2><a href="{{ content_url(post.url) }}" title="Permanent Link to {{ post.meta.title }}">{{ post.meta.title }}</a></h2>
 {% refer to post.relative_path as content %}
 {{ content.post|markdown|typogrify }}
-<p class="metadata"><time datetime="{{ resource.meta.created.strftime('%Y-%m-%d') }}">Posted <a href="{{ content_url(post.url) }}" title="Permanent Link to {{ post.meta.title }}">{{ post.meta.created.strftime('%B %d, %Y') }}</a></time> with tags 
+<div class="metadata"><time datetime="{{ resource.meta.created.strftime('%Y-%m-%d') }}">Posted <a href="{{ content_url(post.url) }}" title="Permanent Link to {{ post.meta.title }}">{{ post.meta.created.strftime('%B %d, %Y') }}</a></time> with tags 
 {% if post.meta.tags %}
 {% for tag in post.meta.tags %}<a href="{{ content_url('brian/tag/'~tag|slugify~'.html') }}">{{ tag }}</a>{% if not loop.last %}, {% endif %}{% endfor %}
-{% endif %}</p>
+{% endif %}</div>
 </article>
 {% endfor %}
