@@ -32,18 +32,22 @@
   <!-- Prompt IE 6 users to install Chrome Frame. Remove this if you support IE 6. chromium.org/developers/how-tos/chrome-frame-getting-started -->
   <!--[if lt IE 7]><p class=chromeframe>Your browser is <em>ancient!</em> <a href="http://browsehappy.com/">Upgrade to a different browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to experience this site.</p><![endif]-->  
   {% block content %}
-
+  <div id="slurpee">
   <header>
     {% block header -%}
-        <h1><i class="icon-camera-retro"></i> Brian Boucheron <span>Adventures in nonsense (and cheese)</span></h1>
+    <h1><a href="/brian/">Brian Boucheron</a></h1>
+    <p>An infrequently maintained blog about cheese, goats, gardening, cookery, and other such nonsense.</p>
+    <p>More information might be obtained on the <a href="/brian/about">about</a> page, or blather at me on <a href="https://twitter.com/#!/bertmb">Twitter</a>.</p>
+    <p>Occasionally I will output something on <a href="https://github.com/beardicus">Github</a>, <a href="http://www.flickr.com/photos/bert_m_b/">Flickr</a>, or <a href="http://pinboard.in/u:beardicus">Pinboard</a>.</p>
     {%- endblock header %}
   </header>
   <div role="main">
     {% block main %}{% endblock main %}
   </div>
   <footer>
-    {% block footer %}footer{% endblock footer %}
+    {% block footer %}{% endblock footer %}
   </footer>
+  </div>
   {% endblock content %}
 
   <!-- JavaScript at the bottom for fast page loading -->

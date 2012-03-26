@@ -196,7 +196,7 @@ class TaggerPlugin(Plugin):
         archive_text = u"""
 ---
 extends: false
-title: %(title)s
+title: Tagged with %(title)s
 %(meta)s
 ---
 

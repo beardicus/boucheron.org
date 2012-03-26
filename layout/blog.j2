@@ -1,29 +1,21 @@
 {% extends "base.j2" %}
 {% block main -%}
-    <article class="post">
-        <h2 class="title"><a href="{{ content_url(resource.url) }}">{{ resource.meta.title }}</a></h2>
-        <time datetime="{{ resource.meta.created.strftime('%Y-%m-%d') }}">
-            Posted: {{ resource.meta.created.strftime('%B %d, %Y') }}
-        </time>
-{% if resource.meta.tags %}
-        <ul class="tags">
-{% for tag in resource.meta.tags %}
-            <li><a href="{{ content_url('brian/tag/'~tag|slugify~'.html') }}">{{ tag }}</a></li>
-{% endfor %}
-        </ul>
-{% endif %}
-
+<article class="post">
+<h2><a href="{{ content_url(resource.url) }}" title="Permanent Link to {{ resource.meta.title }}">{{ resource.meta.title }}</a></h2>
 {% mark post %}
 {% filter markdown|typogrify %}
 {% block post %}{% endblock %}
 {% endfilter %}
 {% endmark %}
-
+<div class="metadata"><time datetime="{{ resource.meta.created.strftime('%Y-%m-%d') }}"><i class="icon-time"></i>&nbsp;<a href="{{ content_url(resource.url) }}" title="Permanent Link to {{ resource.meta.title }}">{{ resource.meta.created.strftime('%B %d, %Y') }}</a></time> 
+{% if resource.meta.tags %}
+&nbsp;&nbsp;<i class="icon-tags"></i>&nbsp;{% for tag in resource.meta.tags %}<a href="{{ content_url('brian/tag/'~tag|slugify~'.html') }}">{{ tag }}</a>{% if not loop.last %}, {% endif %}{% endfor %}
+{% endif %}</div>
 </article>
 
-<!--<nav class="post_nav">
-    <a class="prev{{' disabled' if not resource.prev_by_time }}" title="{{ resource.prev_by_time.meta.title }}" {% if resource.prev_by_time %} href="{{ content_url(resource.prev_by_time.url) }}"{% endif %}>Previous</a>
-    <a class="next{{' disabled' if not resource.next_by_time }}" title="{{ resource.next_by_time.meta.title }}" {% if resource.next_by_time %} href="{{ content_url(resource.next_by_time.url) }}"{% endif %}>Next</a>
-</nav>-->
+{% endblock %}
 
+{% block footer %}
+    <a class="previous{{' disabled' if not resource.next_by_time }}" title="{{ resource.next_by_time.meta.title }}" {% if resource.next_by_time %} href="{{ content_url(resource.next_by_time.url) }}"{% endif %}><i class="icon-arrow-left"></i> Previous</a>
+    <a class="next{{' disabled' if not resource.prev_by_time }}" title="{{ resource.prev_by_time.meta.title }}" {% if resource.prev_by_time %} href="{{ content_url(resource.prev_by_time.url) }}"{% endif %}>Next <i class="icon-arrow-right"></i></a>
 {%- endblock %}
