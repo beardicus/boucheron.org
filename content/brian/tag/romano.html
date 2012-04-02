@@ -1,0 +1,10 @@
+---
+extends: false
+title: Tagged with romano
+
+---
+
+{% set tag = site.tagger.tags['romano'] %}
+{% set source = site.content.node_from_relative_path('brian') %}
+{% set walker = source['walk_resources_tagged_with_romano'] %}
+{% extends "listing.j2" %}
