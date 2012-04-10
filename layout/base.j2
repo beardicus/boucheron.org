@@ -16,7 +16,6 @@
 
   <link rel="stylesheet" href="/media/css/style.css">
   <link rel="stylesheet/less" type="text/css" href="/media/css/style.less">
-  <link href='http://fonts.googleapis.com/css?family=Merriweather:400,900' rel='stylesheet' type='text/css'>
 
   <script src="/media/js/libs/less-1.2.2.min.js" type="text/javascript"></script>
 
@@ -35,10 +34,14 @@
   <div id="slurpee">
   <header>
     {% block header -%}
-    <h1><a href="/brian/">Brian Boucheron</a></h1>
-    <p>An infrequently maintained blog about cheese, goats, gardening, cookery, and other such nonsense.</p>
-    <p>More information might be obtained on the <a href="/brian/about">about</a> page, or blather at me on <a href="https://twitter.com/#!/bertmb">Twitter</a>.</p>
-    <p>Occasionally I will output something on <a href="https://github.com/beardicus">Github</a>, <a href="http://www.flickr.com/photos/bert_m_b/">Flickr</a>, or <a href="http://pinboard.in/u:beardicus">Pinboard</a>.</p>
+    <h1><a href="/brian/" title="Hey that's me!">Brian Boucheron</a></h1>
+    <nav>
+        <a href="/brian/about">About</a>
+        <a href="https://twitter.com/#!/bertmb">Twitter</a>
+        <a href="http://www.flickr.com/photos/bert_m_b/">Flickr</a>
+        <a href="http://pinboard.in/u:beardicus">Pinboard</a>
+        <a href="https://github.com/beardicus">Github</a>
+    </nav>
     {%- endblock header %}
   </header>
   <div role="main">

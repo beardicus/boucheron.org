@@ -1,70 +1,40 @@
+/* Constants! */
+
+@accent:        #963;
+@accent_high:   lighten(@accent, 15%);
+
+@base:          #222;
+@base_subtle:   #222;
+
+/* Fonts! */
+
+@font-face {
+  font-family: 'Bitter';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Bitter-Regular'), url('http://themes.googleusercontent.com/static/fonts/bitter/v3/SHIcXhdd5RknatSgOzyEkA.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'Merriweather';
+  font-style: normal;
+  font-weight: normal;
+  src: local('Merriweather'), url('http://themes.googleusercontent.com/static/fonts/merriweather/v4/RFda8w1V0eDZheqfcyQ4EHhCUOGz7vYGh680lGh-uXM.woff') format('woff');
+}
+@font-face {
+  font-family: 'Merriweather';
+  font-style: normal;
+  font-weight: 900;
+  src: local('Merriweather Heavy'), local('Merriweather-Heavy'), url('http://themes.googleusercontent.com/static/fonts/merriweather/v4/ZvcMqxEwPfh2qDWBPxn6ngi3Hume1-TKjJz2lX0jYjo.woff') format('woff');
+}
+
 @import "font-awesome.less";
-@accent:        #c00;
-@accent_high:   lighten(@accent, 5%);
+
+
+/* Styles! */
 
 body {
-    background: url(/media/img/groovepaper.png);
-    border-top: 10px solid @accent;
-}
-
-#slurpee {
-    width: 900px;
-    margin: 0 auto;
-    margin-top: 100px;
-    padding: 0;
-    height: 100%;
-}
-
-header {
-    width: 220px;
-    float: right;
-    padding: 0;
-    margin-top: 44px;
-    
-    h1 {
-       font: 400 22px "merriweather";
-       color: @accent;
-       margin: 0px;
-       }
-    p {
-       font: 400 12px/18px "merriweather";
-       color: #222;
-       margin: 0;
-       margin-bottom: 10px;
-    }  
-    
-}
-
-div[role='main'] {
-    width: 640px;
-    margin: 0 auto;
-    float: left;
-}
-
-footer {
-    width: 640px;
-    padding-bottom: 80px;
-    margin: 0 auto;
-    float: left;
-    
-    font: 400 15px/24px "merriweather";
-    color: #222;
-    
-    a.disabled { color: #ddd; }
-    
-    .next { float: right; }
-    .prev { float: left; }
-}
-
-h1 {
-    font: 400 32px "merriweather";
-    color: @accent;
-}
-
-h2 {
-    font: 900 42px/42px "merriweather";
-    margin: 0px;
-    margin-bottom: -5px;
+   background: url(/media/img/groovepaper.png);
 }
 
 a         { color: #000; text-decoration: none; font-weight: bold;}
@@ -72,33 +42,102 @@ a:visited { color: #333; }
 a:hover   { color: @accent_high; }
 a:focus   { outline: thin dotted; }
 
+#slurpee {
+    width: 800px;
+    margin: 0 auto;
+    padding: 0;
+    height: 100%;
+}
+
+header {
+    border-bottom: 1px @base_subtle dotted;
+    margin-bottom: 50px;
+    height: 55px;
+
+    h1 {
+       font: 400 26px "Bitter"; 
+       font-weight: 400;
+       font-style: normal;
+       color: @accent;
+       margin: 0px;
+       float: left;
+       height: 55px;
+       line-height: 55px;
+       a {font-weight: normal;}
+    }
+
+    nav {
+       font: 400 18px "Bitter";
+       color: @accent;
+       float: right;
+       margin: 0;
+       margin-bottom: 10px;
+       height: 55px;
+       line-height: 55px;
+       a         { color: @accent; text-decoration: none; font-weight: normal; margin-left: 20px;}
+       a:visited { color: @accent; }
+       a:hover   { color: @accent_high; }
+    }  
+    
+}
+
+div[role='main'] {
+
+}
+
 article {
     margin-bottom: 80px;
-    font: 400 14px/24px "merriweather";
-    color: #222;
-    p {
-        margin: 10px 0px;
-        a { color: @accent; text-decoration: underline }
-        img {
-            width: 640px;
-            height: 426px;
+    font: 400 1.1em/1.6em "merriweather";
+    color: @base;
+
+    h2 {
+        font: 900 38px "Bitter";
+        line-height: 55px;
+        margin: 0px;
+        font-weight: normal;
+        a { color: @base; font-weight: normal }
+        a:visited { color: @base; }
+        a:hover { color: @accent_high; }
+        float: left
+        display: block;
+ 
+        time {
+            float: right;
+            font-weight: normal;
+            font: 400 16px "Bitter";
+            line-height: 55px;
+            color: @base_subtle;
+            a {font-weight: normal; color: @accent}
+            a:visited { color: @accent }
+            a:hover { color: @accent_high }
+            i {font-size: 14px; line-height: 1px}
         }
     }
+   
+    
+    p {
+        margin: 0px;
+        margin-bottom: 15px;
+        a { color: @accent; text-decoration: underline }
+        img {
+            width: 800px;
+            height: 532px;
+        }
+    }
+
     div.metadata {
-        border-top: 1px #ccc dotted;
+        border-top: 1px @base_subtle dotted;
         padding: 5px;
-        color: #bbb;
-        font: 400 12px/14px "merriweather";
+        color: @base_subtle;
+        font: 400 12px/14px "Bitter";
         margin: 0;
-        a         { color: #aaa; font-weight: normal;}
-        a:visited { color: #aaa; }
+        a         { color: @accent; font-weight: normal;}
+        a:visited { color: @accent; }
         a:hover   { color: @accent_high; }
     }
+
     blockquote { font-size: 14px; }
-    img { 
-        width: 640px;
-        height: 426px;
-    }
+
     p code {
         font-family: Monaco, Andale Mono, Courier New, monospace;
         font-size: 15px;
@@ -108,8 +147,28 @@ article {
         moz-border-radius: 3px;
         padding: 1px 3px;
     }
+
     pre code {
         font-family: Monaco, Andale Mono, Courier New, monospace;
         font-size: 15px;
     }
+
 }
+
+footer {
+    width: 800px;
+    padding-bottom: 80px;
+    margin: 0 auto;
+    float: left;
+    
+    font: 400 15px/24px "merriweather";
+    color: @base;
+    
+    a.disabled { color: #ddd; }
+    
+    .next { float: right; }
+    .prev { float: left; }
+}
+
+
+
