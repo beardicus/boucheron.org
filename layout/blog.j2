@@ -1,7 +1,7 @@
 {% extends "base.j2" %}
 {% block main -%}
 <article class="post">
-<h2><a href="{{ content_url(resource.url) }}" title="Permanent Link to {{ resource.meta.title }}">{{ resource.meta.title }}</a></h2>
+<h2><a href="{{ content_url(resource.url) }}" title="Permanent Link to {{ resource.meta.title }}">{{ resource.meta.title }}</a><time datetime="{{ resource.meta.created.strftime('%Y-%m-%d') }}"><i class="icon-time"></i>&nbsp;<a href="{{ content_url(resource.url) }}" title="Permanent Link to {{ resource.meta.title }}">{{ resource.meta.created.strftime('%B %d, %Y') }}</a></time></h2>
 {% mark post %}
 {% filter markdown|typogrify %}
 {% block post %}{% endblock %}

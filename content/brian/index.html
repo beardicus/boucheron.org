@@ -9,7 +9,8 @@ listable: false
 
 {% for post in resource.node.walk_resources_sorted_by_time()|top(5) %}
 <article class="post">
-<h2><a href="{{ content_url(post.url) }}" title="Permanent Link to {{ post.meta.title }}">{{ post.meta.title }}</a></h2>
+<h2><a href="{{ content_url(post.url) }}" title="Permanent Link to {{ post.meta.title }}">{{ post.meta.title }}</a><time datetime="{{ resource.meta.created.strftime('%Y-%m-%d') }}"><i class="icon-time"></i>&nbsp;<a href="{{ content_url(post.url) }}" title="Permanent Link to {{ post.meta.title }}">{{ post.meta.created.strftime('%B %d, %Y') }}</a></time></h2>
+
 {% refer to post.relative_path as content %}
 {{ content.post|markdown|typogrify }}
 <div class="metadata"><time datetime="{{ resource.meta.created.strftime('%Y-%m-%d') }}"><i class="icon-time"></i>&nbsp;<a href="{{ content_url(post.url) }}" title="Permanent Link to {{ post.meta.title }}">{{ post.meta.created.strftime('%B %d, %Y') }}</a></time> 
