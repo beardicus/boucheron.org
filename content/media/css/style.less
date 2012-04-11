@@ -45,7 +45,7 @@ a:visited { color: #333; }
 a:hover   { color: @accent_high; }
 a:focus   { outline: thin dotted; }
 
-#slurpee {
+#wrapper {
     width: 800px;
     margin: 0 auto;
     padding: 0;
@@ -53,30 +53,25 @@ a:focus   { outline: thin dotted; }
 }
 
 header {
-    border-bottom: 1px @base_subtle dotted;
+    border-bottom: 1px dotted @base_subtle ;
     margin-bottom: 50px;
     height: 55px;
 
     h1 {
-       font: 400 26px "Bitter"; 
-       font-weight: 400;
-       font-style: normal;
+       font: 400 26px/55px "Bitter"; 
        color: @accent;
-       margin: 0px;
        float: left;
-       height: 55px;
-       line-height: 55px;
+       margin: 0;
+       
        a {font-weight: normal;}
     }
 
     nav {
-       font: 400 18px "Bitter";
+       font: 400 18px/55px "Bitter";
        color: @accent;
        float: right;
        margin: 0;
-       margin-bottom: 10px;
-       height: 55px;
-       line-height: 55px;
+
        a         { color: @accent; text-decoration: none; font-weight: normal; margin-left: 20px;}
        a:visited { color: @accent; }
        a:hover   { color: @accent_high; }
@@ -94,25 +89,23 @@ article {
     color: @base;
 
     h2 {
-        font: 900 38px "Bitter";
-        line-height: 55px;
+        font: 400 38px/55px "Bitter";
         margin: 0px;
-        font-weight: normal;
-        a { color: @base; font-weight: normal }
-        a:visited { color: @base; }
-        a:hover { color: @accent_high; }
         float: left
         display: block;
+        
+        a { font-weight: normal; }
  
         time {
+            font: 400 16px/55px "Bitter";
+            color: @base_subtle;
             float: right;
             font-weight: normal;
-            font: 400 16px "Bitter";
-            line-height: 55px;
-            color: @base_subtle;
-            a {font-weight: normal; color: @accent}
+
+            a         {font-weight: normal; color: @accent}
             a:visited { color: @accent }
-            a:hover { color: @accent_high }
+            a:hover   { color: @accent_high }
+            
             i {font-size: 14px; line-height: 1px}
         }
     }
@@ -121,7 +114,9 @@ article {
     p {
         margin: 0px;
         margin-bottom: 15px;
+        
         a { color: @accent; text-decoration: underline }
+        
         img {
             width: 800px;
             height: 532px;
@@ -129,12 +124,13 @@ article {
     }
 
     div.metadata {
-        border-top: 1px @base_subtle dotted;
-        padding: 5px;
-        color: @base_subtle;
         font: 400 12px/14px "Bitter";
+        color: @base_subtle;
+        border-top: 1px dotted @base_subtle;
+        padding: 5px;
         margin: 0;
-        a         { color: @accent; font-weight: normal;}
+
+        a         { color: @accent; font-weight: normal; }
         a:visited { color: @accent; }
         a:hover   { color: @accent_high; }
     }
@@ -159,19 +155,13 @@ article {
 }
 
 footer {
-    width: 800px;
-    padding-bottom: 80px;
-    margin: 0 auto;
-    float: left;
-    
     font: 400 15px/24px "merriweather";
     color: @base;
-    
+    padding-bottom: 80px;
+
     a.disabled { color: #ddd; }
     
     .next { float: right; }
     .prev { float: left; }
 }
-
-
 
