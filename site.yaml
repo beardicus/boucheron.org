@@ -11,6 +11,7 @@ plugins:
     - hyde.ext.plugins.sorter.SorterPlugin
     - hyde.ext.plugins.syntext.SyntextPlugin
     - hyde.ext.plugins.textlinks.TextlinksPlugin
+    - hyde.ext.plugins.less.LessCSSPlugin
     - tagger.TaggerPlugin # adds some slugification for humanoid tags
     - slugify.SlugifyPlugin # access the slugify filter from templates
 
@@ -22,12 +23,15 @@ simple_copy:
 #context:
 #    data:
 
+# lessCSS
+less:
+    app:/usr/bin/lessc
 
 # tweak markdown
 markdown:
-  extensions:
-#    - codehilite
-    - extra
+    extensions:
+#       - codehilite
+        - extra
 
 # default metadata
 meta:
