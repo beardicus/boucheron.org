@@ -1,0 +1,10 @@
+---
+extends: false
+title: Tagged with provolone
+
+---
+
+{% set tag = site.tagger.tags['provolone'] %}
+{% set source = site.content.node_from_relative_path('brian') %}
+{% set walker = source['walk_resources_tagged_with_provolone'] %}
+{% extends "listing.j2" %}
