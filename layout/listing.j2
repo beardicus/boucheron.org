@@ -1,23 +1,18 @@
 {% extends "base.j2" %}
 {% block main %}
 
+<article class="listing">
 <h2>{{ resource.meta.title }}</h2>
-<ul class="posts">
-{% for post in walker() %}
-<li class="post">
-    <time datetime="{{ post.meta.created.strftime('%Y-%m-%d') }}">
-        {{ post.meta.created.strftime('%a, %d %b %Y') }}
-    </time>
-    <h3><a href="{{ content_url(post.url) }}">{{ post.meta.title }}</a></h3>
-    {% if post.meta.tags %}
-    <ul class="tags">
-    {% for tag in post.meta.tags -%}
-        <li><a href="{{ content_url('brian/tag/'~tag|slugify~'.html') }}">{{ tag }}</a></li>
-    {%- endfor %}
-    </ul>
-    {% endif %}
-</li>
-{%- endfor %}
-</ul>
 
+{% for post in walker() %}
+<h3><a href="{{ content_url(post.url) }}">{{ post.meta.title }}</a></h3>
+<div class="metadata"><time datetime="{{ resource.meta.created.strftime('%Y-%m-%d') }}"><i class="icon-time"></i>&nbsp;<a href="{{ content_url(post.url) }}" title="Permanent Link to {{ post.meta.title }}">{{ post.meta.created.strftime('%B %d, %Y') }}</a></time> 
+
+{% if post.meta.tags %}
+&nbsp;&nbsp;<i class="icon-tags"></i>&nbsp;{% for tag in post.meta.tags %}<a href="{{ content_url('brian/tag/'~tag|slugify~'.html') }}">{{ tag }}</a>{% if not loop.last %}, {% endif %}{% endfor %}
+{% endif %}</div>
+{%- endfor %}
+
+
+</article>
 {% endblock %}

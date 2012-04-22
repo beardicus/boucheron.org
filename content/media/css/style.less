@@ -37,7 +37,8 @@
 /* Styles! */
 
 body {
-   background: url(/media/img/groovepaper.png);
+    background: url(/media/img/groovepaper.png);
+    font: 400 1em/1 "merriweather";
 }
 
 a         { color: #000; text-decoration: none; font-weight: bold;}
@@ -46,33 +47,34 @@ a:hover   { color: @accent_high; }
 a:focus   { outline: thin dotted; }
 
 #wrapper {
-    width: 800px;
+    width: 90%;
+    max-width: 800px;
     margin: 0 auto;
     padding: 0;
-    height: 100%;
 }
 
 header {
     border-bottom: 1px dotted @base_subtle ;
-    margin-bottom: 50px;
-    height: 55px;
-
+    margin-bottom: 3em;
+    height: 2em;
+    font: 400 1.6em/2.2 "Bitter"; 
     h1 {
-       font: 400 26px/55px "Bitter"; 
        color: @accent;
        float: left;
        margin: 0;
-       
+       font-size: 1em;
+       line-height: 2;
        a {font-weight: normal;}
     }
 
     nav {
-       font: 400 18px/55px "Bitter";
+       font-size: .6em;
+       line-height: 3.5;
        color: @accent;
        float: right;
        margin: 0;
 
-       a         { color: @accent; text-decoration: none; font-weight: normal; margin-left: 20px;}
+       a         { color: @accent; text-decoration: none; font-weight: normal; margin-left: 1em;}
        a:visited { color: @accent; }
        a:hover   { color: @accent_high; }
     }  
@@ -84,12 +86,12 @@ div[role='main'] {
 }
 
 article {
-    margin-bottom: 80px;
-    font: 400 1.1em/1.6em "merriweather";
+    margin-bottom: 5em;
+    font: 400 1.1em/1.6 "merriweather";
     color: @base;
-
+    
     h2 {
-        font: 400 38px/55px "Bitter";
+        font: 400 2.5em/1.5 "Bitter";
         margin: 0px;
         float: left
         display: block;
@@ -97,7 +99,7 @@ article {
         a { font-weight: normal; }
  
         time {
-            font: 400 16px/55px "Bitter";
+            font: 400 .45em/3.5 "Bitter";
             color: @base_subtle;
             float: right;
             font-weight: normal;
@@ -106,28 +108,37 @@ article {
             a:visited { color: @accent }
             a:hover   { color: @accent_high }
             
-            i {font-size: 14px; line-height: 1px}
+            i {font-size: .8em}
         }
     }
-   
+    
+    h3 {
+        font: 400 1.5em/.8 "Bitter";
+        margin: 0px;
+        float: left
+        display: block;
+        margin-top: 1em;
+        
+        a { font-weight: normal; }
+    }
     
     p {
-        margin: 0px;
-        margin-bottom: 15px;
+        margin: 0;
+        margin-bottom: 1em;
         
         a { color: @accent; text-decoration: underline }
         
         img {
-            width: 800px;
-            height: 532px;
+            max-width: 100%;
+            height: auto;
         }
     }
 
     div.metadata {
-        font: 400 12px/14px "Bitter";
+        font: 400 .7em "Bitter";
         color: @base_subtle;
         border-top: 1px dotted @base_subtle;
-        padding: 5px;
+        padding: .5em;
         margin: 0;
 
         a         { color: @accent; font-weight: normal; }
@@ -135,33 +146,82 @@ article {
         a:hover   { color: @accent_high; }
     }
 
-    blockquote { font-size: 14px; }
+    blockquote { font-size: .9em; }
 
     p code {
         font-family: Monaco, Andale Mono, Courier New, monospace;
-        font-size: 15px;
+        font-size: .9em;
         background-color: #ddd;
-        border-radius: 3px;
-        webkit-border-radius: 3px;
-        moz-border-radius: 3px;
-        padding: 1px 3px;
+        border-radius: .25em;
+        webkit-border-radius: .25em;
+        moz-border-radius: .25em;
+        padding: .1em .25em;
     }
 
     pre code {
         font-family: Monaco, Andale Mono, Courier New, monospace;
-        font-size: 15px;
+        font-size: .9em;
     }
 
 }
 
 footer {
-    font: 400 15px/24px "merriweather";
+    font: 400 1.1em/1.6 "merriweather";
     color: @base;
-    padding-bottom: 80px;
+    padding-bottom: 5em;
 
     a.disabled { color: #ddd; }
     
     .next { float: right; }
     .prev { float: left; }
 }
+
+/* Mobile Crap!  720 480 320 240 */
+@media screen and (max-width: 720px) {
+    article {
+            font-size: 1em;
+            margin-bottom: 2em;   
+    }
+
+     .mobile-hide {
+        display: none;
+     }
+    header {
+        margin-bottom: 1em;
+    }
+}
+
+@media screen and (max-width: 479px) {
+    article {
+            font-size: .9em;   
+    }
+    
+    .phone-hide {
+        display: none;
+    }
+    
+/*    .button {
+        background-color: @accent;
+        color: #fff;
+        border-radius: .25em;
+        webkit-border-radius: .25em;
+        moz-border-radius: .25em;
+        padding: .1em .25em;
+    }
+*/
+}
+
+@media screen and (max-width: 300px) {
+    header {
+        font-size: 1.3em;
+    }
+    article {
+        font-size: .8em;
+        h2 {
+         font-size: 2em;
+        }   
+    }
+}
+
+
 
