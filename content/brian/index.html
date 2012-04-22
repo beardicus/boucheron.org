@@ -7,7 +7,7 @@ listable: false
 ---
 
 
-{% for post in resource.node.walk_resources_sorted_by_time()|top(5) %}
+{% for post in resource.node.walk_resources_sorted_by_time()|top(3) %}
 <article class="post">
 <h2><a href="{{ content_url(post.url) }}" title="Permanent Link to {{ post.meta.title }}">{{ post.meta.title }}</a><time class="mobile-hide" datetime="{{ resource.meta.created.strftime('%Y-%m-%d') }}"><i class="icon-time"></i>&nbsp;<a href="{{ content_url(post.url) }}" title="Permanent Link to {{ post.meta.title }}">{{ post.meta.created.strftime('%B %d, %Y') }}</a></time></h2>
 
