@@ -1,4 +1,5 @@
 deploy/
+images/
 .hyde_deps
 
 # Numerous always-ignore extensions
