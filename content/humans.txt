@@ -3,8 +3,7 @@
 /* TEAM */
   Just me, Brian Boucheron
   Site: http://boucheron.org/brian
-  Twitter: @bert_m_b
+  Twitter: @bertmb
 
 /* SITE */
-  Standards: Derp
   Software: Hyde

@@ -25,7 +25,9 @@ simple_copy:
 
 # lessCSS
 less:
-    app:/usr/bin/lessc
+    app: /usr/bin/lessc
+    args:
+      compress: ""
 
 # tweak markdown
 markdown:

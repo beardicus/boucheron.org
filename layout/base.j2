@@ -14,14 +14,14 @@
   <!-- Mobile viewport optimized: h5bp.com/viewport -->
   <meta name="viewport" content="width=device-width">
 
-  <link rel="stylesheet" href="/media/css/style.css">
+  <link rel="stylesheet" href="/brian/media/css/style.css">
 
   {% block feed %}<link rel="alternate" type="application/atom+xml" title="Brian Boucheron RSS Feed" href="http://boucheron.org/brian/feed" />{% endblock feed %}
 
   <!-- All JavaScript at the bottom, except this Modernizr build.
        Modernizr enables HTML5 elements & feature detects for optimal performance.
        Create your own custom Modernizr build: www.modernizr.com/download/ -->
-  <script src="/media/js/libs/modernizr-2.5.3.min.js"></script>
+  <script src="/brian/media/js/libs/modernizr-2.5.3.min.js"></script>
 </head>
 <body>
   {% block body %}
@@ -54,16 +54,15 @@
 
   <!-- Grab Google CDN's jQuery, with a protocol relative URL; fall back to local if offline -->
   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
-  <script>window.jQuery || document.write('<script src="/media/js/libs/jquery-1.7.1.min.js"><\/script>')</script>
+  <script>window.jQuery || document.write('<script src="/brian/media/js/libs/jquery-1.7.1.min.js"><\/script>')</script>
 
   <!-- scripts concatenated and minified via build script -->
-  <script src="/media/js/plugins.js"></script>
-  <script src="/media/js/script.js"></script>
+  <script src="/brian/media/js/plugins.js"></script>
+  <script src="/brian/media/js/script.js"></script>
   <!-- end scripts -->
 
 {% if site.config.mode == "production" %}
-  <!-- Asynchronous Google Analytics snippet. Change UA-XXXXX-X to be your site's ID.
-       mathiasbynens.be/notes/async-analytics-snippet -->
+  <!-- Asynchronous Google Analytics snippet. -->
   <script>
     var _gaq=[['_setAccount','UA-604905-1'],['_trackPageview']];
     (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
