@@ -1,0 +1,9 @@
+---
+extends: false
+title: All Posts
+
+---
+
+{% set source = site.content.node_from_relative_path('brian') %}
+{% set walker = source['walk_resources_sorted_by_time'] %}
+{% extends "listing.j2" %}
