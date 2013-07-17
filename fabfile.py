@@ -15,4 +15,4 @@ def serve():
 def publish():
     clean()
     local('hyde gen -c site-production.yaml')
-    local('hyde publish -p github -c site-production.yaml')
+    local('rsync -r ./deploy/ bert@bean:/home/bert/public/boucheron.org/')

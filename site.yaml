@@ -1,6 +1,6 @@
 mode: development
-media_root: media
-media_url: /media
+media_root: brian/media
+media_url: /brian/media
 base_url: /
 
 # add thine plugins
@@ -71,10 +71,3 @@ tagger:
             archive_extension: html
             meta.listable: false
 
-# publish up to github
-publisher:
-    github:
-        type: hyde.ext.publishers.dvcs.Git
-        path: ../beardicus.github.com
-        url: git@github.com:beardicus/beardicus.github.com.git
-        mode: production
