@@ -16,5 +16,5 @@ def publish():
     clean()
     local('hyde gen -c site-production.yaml')
     local('yui-compressor ./deploy/brian/media/js/plugins.js -o ./deploy/brian/media/js/plugins.js')
-    local('for file in $(find ./deploy -type f -name "*.html" -o -name "*.css" -o -name "*.js"); do zopfli $file; touch -c --reference=$file $file.gz; done')
-    local('rsync -r ./deploy/ bert@bean:/home/bert/public/boucheron.org/')
+    local('for file in $(find ./deploy -type f -name "*.html" -o -name "*.css" -o -name "*.js" -o -name "*.xml"); do zopfli --i100 $file; touch -c --reference=$file $file.gz; done')
+    local('rsync -r --delete --progress ./deploy/ bert@bean:/home/bert/public/boucheron.org/')

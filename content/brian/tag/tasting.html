@@ -1,0 +1,10 @@
+---
+extends: false
+title: Tagged with tasting
+
+---
+
+{% set tag = site.tagger.tags['tasting'] %}
+{% set source = site.content.node_from_relative_path('brian') %}
+{% set walker = source['walk_resources_tagged_with_tasting'] %}
+{% extends "listing.j2" %}
