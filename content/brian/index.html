@@ -1,12 +1,11 @@
 ---
 extends: base.j2
-default_block: main
 title: Stuff, and Also Things
 description: Home page for Brian Boucheron
 listable: false
 ---
 
-
+{% block main %}
 {% for post in resource.node.walk_resources_sorted_by_time()|top(3) %}
 <article class="post">
 <h2><a href="{{ content_url(post.url) }}" title="Permanent Link to {{ post.meta.title }}">{{ post.meta.title }}</a><time class="mobile-hide" datetime="{{ resource.meta.created.strftime('%Y-%m-%d') }}"><i class="icon-time"></i>&nbsp;<a href="{{ content_url(post.url) }}" title="Permanent Link to {{ post.meta.title }}">{{ post.meta.created.strftime('%B %d, %Y') }}</a></time></h2>
@@ -20,3 +19,10 @@ listable: false
 {% endif %}</span></div>
 </article>
 {% endfor %}
+{%- endblock %}
+
+{% block footer %}
+    {% set previous = resource.node.walk_resources_sorted_by_time()[3] %}
+    <a class="previous" title="{{ previous.meta.title }}" href="{{ content_url(previous.url) }}"><i class="icon-arrow-left"></i> Previous</a>
+    <a class="next disabled" title="">Next <i class="icon-arrow-right"></i></a>
+{%- endblock %}
