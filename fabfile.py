@@ -19,7 +19,7 @@ def publish():
     local('for file in $(find ./deploy -type f -name "*.html" -o -name "*.css" -o -name "*.js" -o -name "*.xml"); do zopfli --i100 $file; touch -c --reference=$file $file.gz; done')
     local('rsync -r --delete --progress ./deploy/ bert@bean:/home/bert/public/boucheron.org/')
 
-def slurp():
+def draft():
     from datetime import datetime
     from glob import glob
     from iptcinfo import IPTCInfo
@@ -62,5 +62,8 @@ tags: []
         markdown = '![{}](/brian/media/static/{})\n\n'
         targetfile.write(markdown.format(title, newname))
 
+
+    # close file, open in gvim
     targetfile.close()
-    local('gvim ' + blogdir + 'draft.html')
+    local('gvim ' + blogpath + 'draft.html')
+
