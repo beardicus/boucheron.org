@@ -1,9 +1,0 @@
-/* humanstxt.org */
-
-/* TEAM */
-  Just me, Brian Boucheron
-  Site: http://boucheron.org/brian
-  Twitter: @bertmb
-
-/* SITE */
-  Software: Hyde

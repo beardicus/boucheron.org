@@ -1,7 +1,5 @@
-deploy/
-images/
-incoming/
-.hyde_deps
+cache
+output
 
 # Numerous always-ignore extensions
 *.diff
@@ -27,23 +25,3 @@ Thumbs.db
 nbproject
 *.sublime-project
 *.sublime-workspace
-
-# Dreamweaver added files
-_notes
-dwsync.xml
-
-# Komodo
-*.komodoproject
-.komodotools
-
-# Folders to ignore
-.hg
-.svn
-.CVS
-intermediate
-publish
-.idea
-
-# build script local files
-build/buildinfo.properties
-build/config/buildinfo.properties

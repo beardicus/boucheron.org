@@ -1,7 +1,0 @@
----
-extends: atom.j2
-listable: false
----
-{% block title %}Brian Boucheron{% endblock %}
-{% block self_url %}<link href="http://boucheron.org/brian/feed" rel="self" />{% endblock %}
-{% block site_url %}<link href="http://boucheron.org/brian/"/>{% endblock %}
