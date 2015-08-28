@@ -10,6 +10,11 @@ from localconf import *
 SITEURL = 'http://boucheron.org/brian'
 RELATIVE_URLS = False
 
+ARTICLE_URL = '{date:%Y}/{date:%m}/{slug}'
+PAGE_URL = '{slug}'
+TAG_URL = 'tag/{slug}'
+
+
 FEED_ALL_ATOM = 'feed.xml'
 
 DELETE_OUTPUT_DIRECTORY = True

@@ -4,11 +4,17 @@ from __future__ import unicode_literals
 
 AUTHOR = u'Brian Boucheron'
 SITENAME = u'Brian Boucheron'
-SITEURL = 'http://localhost:8000'
+SITEURL = 'http://localhost:8000/brian'
 
 PATH = 'content'
 ARTICLE_PATHS = ['articles']
+STATIC_PATHS = ['images', 'CNAME']
 THEME = 'theme'
+
+PLUGIN_PATHS = ['./pelican-plugins']
+PLUGINS = ['neighbors']
+
+OUTPUT_PATH = 'output/brian/'
 
 TIMEZONE = 'America/New_York'
 DEFAULT_LANG = u'en'
@@ -37,14 +43,16 @@ PAGINATION_PATTERNS = (
     (2, '{base_name}/{number}', '{base_name}/{number}.html'),
 )
 
-ARTICLE_URL = '{date:%Y}/{date:%m}/{slug}'
+ARTICLE_URL = '{date:%Y}/{date:%m}/{slug}.html'
 ARTICLE_SAVE_AS = '{date:%Y}/{date:%m}/{slug}.html'
 
-PAGE_URL = '{slug}'
+PAGE_URL = '{slug}.html'
 PAGE_SAVE_AS = '{slug}.html'
 
-TAG_URL = 'tag/{slug}'
+TAG_URL = 'tag/{slug}.html'
 TAG_SAVE_AS = 'tag/{slug}.html'
+
+SITEMAP = {'format': 'xml'}
 
 # Disable feed generation during development
 FEED_ATOM = None
