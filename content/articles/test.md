@@ -1,6 +1,7 @@
 Title: Testing Foo
 Date: 2015-06-04 10:56:26
 Tags: test, foo
+Status: draft
 
 
 Hello, this is a test.
