@@ -1,0 +1,29 @@
+<article>
+	<header>
+		<h2>
+			<a href="{{ SITEURL }}/{{ article.url }}">
+				{{ article.title }}
+			</a>
+		</h2>
+		<time datetime="{{ article.date.isoformat() }}" itemprop="datePublished">
+			<i class="fa fa-clock-o"></i> {{ article.date|strftime('%B %d, %Y') }}
+		</time>
+	</header>
+	<section>{{ article.content }}</section>
+	<footer>
+		<time datetime="{{ article.date.isoformat() }}" itemprop="datePublished">
+			<i class="fa fa-clock-o"></i> {{ article.date|strftime('%B %d, %Y') }}
+		</time>
+		<span>
+			<i class="fa fa-tags"></i>
+			{% if article.tags %}
+				{% for tag in article.tags %}
+					<a href="{{ SITEURL }}/{{ tag.url }}" rel="tag">
+						{{ tag }}
+					</a>
+					{% if not loop.last %}, {% endif %}
+				{% endfor %}
+			{% endif %}
+		</span>
+	</footer>
+</article>

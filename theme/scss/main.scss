@@ -1,0 +1,97 @@
+@import "bourbon/bourbon";
+@import "settings";
+@import "neat/neat";
+@import "base/base";
+
+
+#wrapper {
+    @include outer-container;
+}
+
+h1,
+h2 {
+    font-size: 2.5em;
+    color: $brown;
+}
+
+h1.title {
+    font-size: 3em;
+    letter-spacing: -0.5px;
+    margin-bottom: 0;
+}
+footer.paginator {
+    @include span-columns(12);
+    font-size: 1em;
+    height: 1em;
+    padding-bottom: 8em;
+}
+a.next {
+    display: block;
+    float: right;
+}
+
+a.previous {
+    display: block;
+    float: left;
+}
+
+article {
+    @include span-columns(12);
+    margin-bottom: 5em;
+    header {
+        @include span-columns(12);
+        h2 {
+            float: left;
+            margin-bottom: .3em;
+        }
+        time {
+            display: block;
+            float: right;
+            padding-top: 1em;
+            font-size: .9em;
+        }
+    }
+    footer {
+        border-top: 1px dotted;
+        padding-top: .1em;
+        font-size: .7em;
+        time {
+            padding-right: 1em;
+        }
+    }
+}
+
+.pop {
+    color: #fb641e
+}
+
+header.title {
+    @include span-columns(12);
+    padding: 4em 0 ;
+    text-align: center;
+}
+
+div.subtitle {
+    position: relative;
+    top: -10px;
+}
+
+img.gravatar {
+	border-radius: 50%;
+    @include size(64px);
+}
+
+nav > ul > li {
+    display: inline;
+    list-style-type: none;
+    font-size: 24px;
+}
+
+li.icon {
+    position: relative;
+    bottom: 22px;
+}
+
+li.avatar {
+    padding: 0 50px;
+}
