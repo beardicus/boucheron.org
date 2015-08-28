@@ -3,6 +3,4 @@ Summary: About page for Brian Boucheron
 Slug: about
 Tags: about
 
-This shall be written from the future. In the meantime, you may find a brief and outdated profile at [my about.me page][1]
-
-[1]: http://about.me/brianboucheron
+I am a designer and nerd and beekeeper and protofarmer. I don't know why this page exists. Sometimes—very infrequently—I wish I blogged more.

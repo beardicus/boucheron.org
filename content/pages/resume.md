@@ -27,15 +27,15 @@ Design print materials for trade shows and conferences – including postcards, 
 *(March 2006–Current)*
 
 ## Various Freelance Clients
-I have done freelance branding, advertising, web design, and photography on and off since college. I've worked with bike shops, physical trainers, [BSides Rochester](http://www.bsidesroc.com/), bike race promoters, cheese shops, among other clients.  
+I have done freelance branding, advertising, web design, and photography on and off since college. I've worked with bike shops, physical trainers, [BSides Rochester](http://www.bsidesroc.com/), bike race promoters, and cheese shops, among other clients.  
 *(Forever and ever)*
 
 ## [Interlock Rochester](http://www.interlockroc.org/)—President
-Interlock is a local hackerspace I helped create, with the goal of providing a shared workspace for members and the local community to develop and share their interests in science, technology, art, and culture. I also designed the logo, website (Wordpress, again), and many marketing materials.  
+Interlock is a local hackerspace I helped create, with the goal of providing a shared workspace for members and the local community to develop and share their interests in science, technology, art, and culture. I also designed the logo, [website](http://www.interlockroc.org/) (Wordpress, again), and many marketing materials.  
 *(October 2009–November 2011)*
 
 ## Sangha Farm—Apprentice
-Lived on-farm for six months, involved in all aspects of growing vegetables, taking care of livestock, milking goats, making cheese, harvesting, distribution, and marketing.  
+Lived on-farm for six months, involved in all aspects of growing vegetables, taking care of livestock, milking goats, making cheese, chasing yaks and oxen, harvesting, distribution, and marketing.  
 *(April–September 2008)*
 
 ## [City Newspaper](http://www.rochestercitynewspaper.com/)—Graphic Designer
