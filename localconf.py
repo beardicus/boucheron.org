@@ -21,36 +21,25 @@ DEFAULT_LANG = u'en'
 TYPOGRIFY = True
 SLUGIFY_SOURCE = 'title'
 
-INDEX_SAVE_AS = 'index.html'
-TAGS_SAVE_AS = 'tags.html'
-ARCHIVES_SAVE_AS = 'archive.html'
-YEAR_ARCHIVE_SAVE_AS = '{date:%Y}/index.html'
-MONTH_ARCHIVE_SAVE_AS = '{date:%Y}/{date:%m}/index.html'
+ARCHIVES_SAVE_AS = ''
 AUTHORS_SAVE_AS = ''
 AUTHOR_SAVE_AS = ''
 CATEGORIES_SAVE_AS = ''
 CATEGORY_SAVE_AS = ''
+TAGS_SAVE_AS = ''
+TAG_SAVE_AS = ''
 
+DIRECT_TEMPLATES = ('index',)
 
-DIRECT_TEMPLATES = ('index', 'tags', 'archives')
+INDEX_SAVE_AS = 'index.html'
+YEAR_ARCHIVE_SAVE_AS = '{date:%Y}/index.html'
+MONTH_ARCHIVE_SAVE_AS = '{date:%Y}/{date:%m}/index.html'
 
-DEFAULT_PAGINATION = 5
-DEFAULT_ORPHANS = 1
-
-PAGINATED_DIRECT_TEMPLATES = ('index',)
-PAGINATION_PATTERNS = (
-    (1, '{base_name}/', '{base_name}/index.html'),
-    (2, '{base_name}/{number}', '{base_name}/{number}.html'),
-)
-
-ARTICLE_URL = '{date:%Y}/{date:%m}/{slug}.html'
+ARTICLE_URL = '{date:%Y}/{date:%m}/{slug}'
 ARTICLE_SAVE_AS = '{date:%Y}/{date:%m}/{slug}.html'
 
-PAGE_URL = '{slug}.html'
+PAGE_URL = '{slug}'
 PAGE_SAVE_AS = '{slug}.html'
-
-TAG_URL = 'tag/{slug}.html'
-TAG_SAVE_AS = 'tag/{slug}.html'
 
 SITEMAP = {'format': 'xml'}
 

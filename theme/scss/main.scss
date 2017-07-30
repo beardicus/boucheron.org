@@ -85,20 +85,45 @@ section > h1 {
     color: #fb641e
 }
 
-
-
 div.subtitle {
     position: relative;
     top: -10px;
 }
 
-img.gravatar {
-	border-radius: 50%;
+div.gravatarin {
+    display: block;
     @include size(64px);
+    border-radius: 50%;
+    background-color: #f00;
+    position: absolute;
+}
+
+div.gravatar {
+    display: block;
+    @include size(64px);
+    border-radius: 50%;
+    z-index: 1000;
+    position: absolute;
+    opacity: 0;
+    color: #fff;
+    font-size: 3em;
+}
+
+div.gravatar:hover {
+    opacity: 1;
+}
+
+div.gravatar:hover > div > img {
+    opacity: 0.5;
+}
+
+img.gravatar {
+    @include size(64px);
+    border-radius: 50%;
 }
 
 nav > ul > li {
-    display: inline;
+    display: inline-block;
     list-style-type: none;
     font-size: 24px;
 }
@@ -109,5 +134,8 @@ li.icon {
 }
 
 li.avatar {
-    padding: 0 50px;
+    margin: 0 50px;
+    position: relative;
+    @include size(64px);
+
 }

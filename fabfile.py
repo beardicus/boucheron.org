@@ -22,7 +22,7 @@ def build_html():
 
 def build_css():
     """Build local version of site styles"""
-    local('scss --sourcemap=file theme/scss/main.scss output/brian/theme/css/main.css')
+    local('sass --sourcemap=file theme/scss/main.scss output/brian/theme/css/main.css')
 
 
 def build():
@@ -52,7 +52,7 @@ def prepublish():
     """Build production version of site"""
     clean()
     local('pelican -s publishconf.py')
-    local('scss theme/scss/main.scss output/brian/theme/css/main.css')
+    local('sass theme/scss/main.scss output/brian/theme/css/main.css')
 
 
 def publish():
