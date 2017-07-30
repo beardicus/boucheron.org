@@ -1,6 +1,5 @@
 cache
 output/brian/*
-pelican-plugins
 
 # Numerous always-ignore extensions
 *.diff
