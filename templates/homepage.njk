@@ -1,0 +1,14 @@
+{% extends "base.njk" %}
+
+{% block header %}
+<h1 class="homepage"><a href="/">index of /brian</a></h1>
+<p>This site contains stuff and things from Brian Boucheron. I am a graphic designer turned technical writer, interested in cheese, robots, computers, and general nerdery. You can find me on <a href="https://twitter.com/bertmb">Twitter</a> and <a href="https://github.com/beardicus">GitHub</a>, and you can read my professional writing at <a href="https://www.digitalocean.com/community/users/bboucheron?primary_filter=tutorials">DigitalOcean</a>.</p>
+{% endblock %}
+
+{% block content %}
+<ul class="listing">
+  {%- for post in posts %}
+    <li><a href="{{ post.path }}">{{ post.title }}</a><div class="date"><a href="{{ post.path }}">{{post.date | date("MMM Do, YYYY")}}</a></div></li>
+  {%- endfor %}
+</ul>
+{% endblock %}

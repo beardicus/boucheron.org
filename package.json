@@ -1,0 +1,48 @@
+{
+  "name": "boucheron.org",
+  "version": "1.0.0",
+  "description": "metalsmith source for boucheron.org/brian website",
+  "main": "build.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/beardicus/boucheron.org.git"
+  },
+  "author": "Brian Boucheron <brian@boucheron.org>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/beardicus/boucheron.org/issues"
+  },
+  "homepage": "https://github.com/beardicus/boucheron.org#readme",
+  "dependencies": {
+    "debug": "^3.1.0",
+    "extend-shallow": "^2.0.1",
+    "metalsmith": "^2.3.0",
+    "metalsmith-brotli": "^1.1.0",
+    "metalsmith-clean-css": "^5.0.1",
+    "metalsmith-collections": "spacedawwwg/metalsmith-collections",
+    "metalsmith-concat": "^6.0.0",
+    "metalsmith-drafts": "0.0.1",
+    "metalsmith-feed-atom": "^1.0.0",
+    "metalsmith-fingerprint": "^1.0.3",
+    "metalsmith-gzip": "^1.1.0",
+    "metalsmith-html-minifier": "^2.4.3",
+    "metalsmith-ignore": "^0.1.2",
+    "metalsmith-layouts": "^1.8.1",
+    "metalsmith-markdownit": "^0.4.0",
+    "metalsmith-metallic": "^2.0.2",
+    "metalsmith-prefix": "^1.0.3",
+    "metalsmith-sharp": "^2.1.1",
+    "moment": "^2.18.1",
+    "multimatch": "^2.1.0",
+    "nunjucks": "^3.0.1",
+    "nunjucks-date": "^1.2.0",
+    "path": "^0.12.7"
+  },
+  "devDependencies": {
+    "metalsmith-browser-sync": "^1.1.1",
+    "metalsmith-debug": "^1.1.0"
+  }
+}
