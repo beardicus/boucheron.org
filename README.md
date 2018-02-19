@@ -1,5 +1,7 @@
-These are the innards of [boucheron.org/brian][1], a [Pelican] blog.
+# boucheron.org
+
+These are the innards of [boucheron.org], a [metalsmith] blog.
 
 
-[1]: http://boucheron.org/brian
-[Pelican]: https://github.com/getpelican/pelican
+[boucheron.org]: http://boucheron.org/brian
+[metalsmith]: http://www.metalsmith.io/
