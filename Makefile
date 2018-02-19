@@ -12,6 +12,7 @@ node_modules: package.json
 	npm install
 
 publish: build
-	ghp-import -b gh-pages build
+	ghp-import -b bb-pages build
+	git push origin bb-pages
 
 .PHONY: clean build dev publish
