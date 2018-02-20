@@ -2,12 +2,10 @@ var sharp = require('metalsmith-sharp')
 var htmlMinifier = require('metalsmith-html-minifier')
 var brotli = require('metalsmith-brotli')
 var compress = require('metalsmith-gzip')
-var drafts = require('metalsmith-drafts')
 
 var app = require('./metalsmith')
 
 app
-  .use(drafts())
   .use(
     // resize and sharpen images
     sharp({
