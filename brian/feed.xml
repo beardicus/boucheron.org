@@ -4,47 +4,7 @@
   <link href="https://boucheron.org/brian/"/>
   <link href="https://boucheron.org/brian/feed.xml" rel="self"/>
   <title>Brian Boucheron</title>
-  <updated>2018-02-19T21:48:24.685Z</updated>
-  <entry>
-    <title>Testing Foo</title>
-    <id>https://boucheron.org/2015/06/test</id>
-    <link href="https://boucheron.org/2015/06/test"/>
-    <updated>2015-06-04T10:56:26.000Z</updated>
-    <content>&lt;p&gt;Helloo, &lt;code&gt;this&lt;/code&gt; is a test.&lt;/p&gt;
-&lt;p&gt;Let&amp;#x2019;s try some more goobers &lt;code&gt;code&lt;/code&gt;&lt;/p&gt;
-&lt;pre&gt;&lt;code class="hljs python"&gt;&lt;span class="hljs-comment"&gt;#!/usr/bin/python&lt;/span&gt;
-x = &lt;span class="hljs-number"&gt;2&lt;/span&gt;
-&lt;span class="hljs-keyword"&gt;if&lt;/span&gt; x == &lt;span class="hljs-number"&gt;1&lt;/span&gt;:
-    &lt;span class="hljs-comment"&gt;# indented four spaces&lt;/span&gt;
-    &lt;span class="hljs-keyword"&gt;print&lt;/span&gt; &lt;span class="hljs-string"&gt;&amp;quot;x is 1.&amp;quot;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
-&lt;h2&gt;Subheading Alpha&lt;/h2&gt;
-&lt;p&gt;hello.&lt;/p&gt;
-&lt;pre&gt;&lt;code class="hljs bash"&gt;$ sudo apt-get install &lt;span class="hljs-string"&gt;&amp;quot;foo&amp;quot;&lt;/span&gt; &lt;span class="hljs-variable"&gt;$HERP&lt;/span&gt;
-$ derps derp.jpg&lt;/code&gt;&lt;/pre&gt;
-&lt;h2&gt;Another Subhead&lt;/h2&gt;
-&lt;p&gt;OK, it&amp;#x2019;s almost the top of the hour, time to check on the
-soon-to-be-mother sheep and get down to work. Expect more bland
-stories and flaccid insight in the weeks to come!&lt;/p&gt;
-&lt;p&gt;OK, it&amp;#x2019;s almost the top of the hour, time to check on the
-soon-to-be-mother sheep and get down to work. Expect more bland
-stories and flaccid insight in the weeks to come! OK, it&amp;#x2019;s almost the top of the hour, time to check on the soon-to-be-mother sheep and get down to work. Expect more bland stories and flaccid insight in the weeks to come!&lt;/p&gt;
-&lt;h3&gt;Subhead Subhead!&lt;/h3&gt;
-&lt;p&gt;OK, it&amp;#x2019;s almost the top of the hour, time to check on the
-soon-to-be-mother sheep and get down to work. Expect more bland
-stories and flaccid insight in the weeks to come! OK, it&amp;#x2019;s almost the top of the hour, time to check on the soon-to-be-mother sheep and get down to work. Expect more bland stories and flaccid insight in the weeks to come!&lt;/p&gt;
-&lt;pre&gt;&lt;code class="hljs python"&gt;&lt;span class="hljs-comment"&gt;#!/usr/bin/python&lt;/span&gt;
-x = &lt;span class="hljs-number"&gt;2&lt;/span&gt;
-&lt;span class="hljs-keyword"&gt;if&lt;/span&gt; x == &lt;span class="hljs-number"&gt;1&lt;/span&gt;:
-    &lt;span class="hljs-comment"&gt;# indented four spaces&lt;/span&gt;
-    &lt;span class="hljs-keyword"&gt;print&lt;/span&gt; &lt;span class="hljs-string"&gt;&amp;quot;x is 1.&amp;quot;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;OK, it&amp;#x2019;s almost the top of the hour, time to check on the soon-to-be-mother sheep and get down to work. Expect more bland stories and flaccid insight in the weeks to come!&lt;/p&gt;
-&lt;hr&gt;
-&lt;p&gt;OK, it&amp;#x2019;s almost the top of the hour, time to check on the
-soon-to-be-mother sheep and get down to work. Expect more bland
-stories and flaccid insight in the weeks to come! OK, it&amp;#x2019;s almost the top of the hour, time to check on the soon-to-be-mother sheep and get down to work. Expect more bland stories and flaccid insight in the weeks to come!&lt;/p&gt;
-&lt;p&gt;Expect more bland stories and flaccid insight in the weeks to come! OK, it&amp;#x2019;s almost the top of the hour, time to check on the soon-to-be-mother sheep and get down to work. Expect more bland stories and flaccid insight in the weeks to come! OK, it&amp;#x2019;s almost the top of the hour, time to check on the soon-to-be-mother sheep and get down to work. Expect more bland stories and flaccid insight in the weeks to come!&lt;/p&gt;
-</content>
-  </entry>
+  <updated>2018-02-20T05:07:29.256Z</updated>
   <entry>
     <title>First Cheddar Tasting</title>
     <id>https://boucheron.org/2012/09/cheddar-tasting</id>
