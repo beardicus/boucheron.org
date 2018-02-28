@@ -1,6 +1,6 @@
 var sharp = require('metalsmith-sharp')
 var htmlMinifier = require('metalsmith-html-minifier')
-var brotli = require('metalsmith-brotli')
+// var brotli = require('metalsmith-brotli')
 var compress = require('metalsmith-gzip')
 
 var app = require('./metalsmith')
@@ -29,13 +29,13 @@ app
     })
   )
   .use(htmlMinifier())
-  .use(
-    brotli({
-      brotli: {
-        quality: 11
-      }
-    })
-  )
+  // .use(
+  //   brotli({
+  //     brotli: {
+  //       quality: 11
+  //     }
+  //   })
+  // )
   .use(
     compress({
       gzip: { level: 9 }
