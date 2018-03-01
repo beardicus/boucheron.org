@@ -14,5 +14,6 @@ node_modules: package.json
 publish: build
 	ghp-import -b bb-pages build
 	git push origin bb-pages
+	rsync -rh ./build/ ~/Sites/boucheron.org/ --exclude '*.gz'
 
 .PHONY: clean build dev publish
