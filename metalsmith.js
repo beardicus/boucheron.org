@@ -1,5 +1,5 @@
 var metalsmith = require('metalsmith')
-var markdown = require('metalsmith-markdownit')
+var remark = require('metalsmith-remark')
 var layouts = require('metalsmith-layouts')
 var collections = require('metalsmith-collections')
 var concat = require('metalsmith-concat')
@@ -13,19 +13,13 @@ var prefix = require('metalsmith-prefix')
 // handle permalinks as TBL commands <https://www.w3.org/Provider/Style/URI>
 var permalinks = require('./lib/permalinks')
 
-// fix some nunjucks configuration that can't be passed through metalsmith
-var consolidate = require('consolidate')
-var nunjucks = require('nunjucks')
-consolidate.requires.nunjucks = nunjucks.configure('templates')
-consolidate.requires.nunjucks.addFilter('date', require('nunjucks-date'))
-
 // do the thing
 var app = metalsmith(__dirname)
   .metadata({
     title: 'Brian Boucheron',
     url: 'https://boucheron.org/brian',
     author: 'Brian Boucheron',
-    description: 'Occasional writing about stuff and also things'
+    description: 'Occasional writing about stuff and also things',
   })
   .source('./source')
   .destination('./build/brian')
@@ -36,16 +30,13 @@ var app = metalsmith(__dirname)
   )
   .use(
     // markdown rendering
-    markdown({
-      typographer: true,
-      html: true
-    })
+    remark([])
   )
   .use(
     // this prefixes all image tags in a post
     prefix({
       prefix: 'brian/img',
-      selector: 'img'
+      selector: 'img',
     })
   )
   .use(
@@ -55,14 +46,14 @@ var app = metalsmith(__dirname)
       posts: {
         pattern: '_posts/*.html',
         sortBy: 'date',
-        reverse: true
-      }
+        reverse: true,
+      },
     })
   )
   .use(
     // create custom permalink scheme for all posts
     permalinks({
-      pattern: '_posts/*.html'
+      pattern: '_posts/*.html',
     })
   )
   .use(
@@ -74,24 +65,24 @@ var app = metalsmith(__dirname)
       metadata: {
         title: 'Brian Boucheron',
         author: 'Brian Boucheron',
-        url: 'https://boucheron.org/brian/'
-      }
+        url: 'https://boucheron.org/brian/',
+      },
     })
   )
   .use(
     cleanCSS({
-      files: 'css/*.css'
+      files: 'css/*.css',
     })
   )
   .use(
     concat({
       files: 'css/*.css',
-      output: 'css/build.css'
+      output: 'css/build.css',
     })
   )
   .use(
     fingerprint({
-      pattern: 'css/build.css'
+      pattern: 'css/build.css',
     })
   )
   .use(ignore(['css/build.css']))
@@ -100,14 +91,19 @@ var app = metalsmith(__dirname)
     layouts({
       pattern: '**/*.html',
       engine: 'nunjucks',
+      engineOptions: {
+        filters: {
+          date: 'nunjucks-date',
+        },
+      },
       directory: 'templates',
-      default: 'post.njk'
+      default: 'post.njk',
     })
   )
   .use(
     prefix({
       prefix: 'brian',
-      selector: 'a, link, script'
+      selector: 'a, link, script',
     })
   )
 

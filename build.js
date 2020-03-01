@@ -1,7 +1,5 @@
 var sharp = require('metalsmith-sharp')
 var htmlMinifier = require('metalsmith-html-minifier')
-// var brotli = require('metalsmith-brotli')
-var compress = require('metalsmith-gzip')
 
 var app = require('./metalsmith')
 
@@ -13,34 +11,22 @@ app
       methods: [
         {
           name: 'resize',
-          args: [1600, null] // default filter is lanczos
+          args: [800, null], // default filter is lanczos
         },
         {
           name: 'sharpen',
-          args: [1, 1, 0.5]
+          args: [1, 1, 0.5],
         },
         {
           name: 'jpeg',
           args: {
-            quality: 33
-          }
-        }
-      ]
+            quality: 40,
+          },
+        },
+      ],
     })
   )
   .use(htmlMinifier())
-  // .use(
-  //   brotli({
-  //     brotli: {
-  //       quality: 11
-  //     }
-  //   })
-  // )
-  .use(
-    compress({
-      gzip: { level: 9 }
-    })
-  )
   .build(function(err) {
     if (err) throw err
   })

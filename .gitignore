@@ -1,21 +1,5 @@
 node_modules
 build/brian/*
-
-# Numerous always-ignore extensions
-*.diff
-*.err
-*.orig
-*.log
-*.rej
-*.swo
-*.swp
-*.vi
-*~
 *.sass-cache
-
-# OS or Editor folders
 .DS_Store
 Thumbs.db
-.cache
-.project
-.settings
