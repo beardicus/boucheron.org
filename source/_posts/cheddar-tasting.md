@@ -1,7 +1,8 @@
 ---
-title: First Cheddar Tasting
+title: Cheddar Tasting
 date: 2012-09-25 09:32:00
 tags: cheddar, cheese, tasting, cheesemaking
+description: "The homemade cheddar is open! I've already tasted or given away half the wheel, and the initial reviews are quite positive."
 ---
 
 
