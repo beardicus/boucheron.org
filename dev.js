@@ -1,12 +1,12 @@
-var debug = require('metalsmith-debug')
-var browserSync = require('metalsmith-browser-sync')
+const debug = require('metalsmith-debug')
+const sync = require('metalsmith-browser-sync')
 
-var app = require('./metalsmith')
+const app = require('./metalsmith')
 
 app
   .metadata({ dev: true, ...app.metadata() })
   .use(
-    browserSync({
+    sync({
       files: ['source/**/*.md', 'source/css/*.css', 'templates/*.njk'],
       server: {
         baseDir: 'build',

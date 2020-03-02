@@ -1,16 +1,17 @@
 var metalsmith = require('metalsmith')
-var remark = require('metalsmith-remark')
-var layouts = require('metalsmith-layouts')
+
+// metalsmith plugins
+var cleanCSS = require('metalsmith-clean-css')
 var collections = require('metalsmith-collections')
 var concat = require('metalsmith-concat')
-var cleanCSS = require('metalsmith-clean-css')
-var metallic = require('metalsmith-metallic')
+var feed = require('metalsmith-feed-atom')
 var fingerprint = require('metalsmith-fingerprint')
 var ignore = require('metalsmith-ignore')
-var feed = require('metalsmith-feed-atom')
+var layouts = require('metalsmith-layouts')
 var prefix = require('metalsmith-prefix')
 
-// handle permalinks as TBL commands <https://www.w3.org/Provider/Style/URI>
+// local metalsmith plugins
+var remark = require('./lib/remark')
 var permalinks = require('./lib/permalinks')
 
 // do the thing
@@ -24,24 +25,25 @@ var app = metalsmith(__dirname)
   .source('./source')
   .destination('./build/brian')
   .clean(false)
+
+  // custom markdown rendering pipeline
   .use(
-    // syntax highlighting
-    metallic()
+    remark({
+      pattern: '**/*.md',
+    })
   )
+
+  // this prefixes all image tags in a post
   .use(
-    // markdown rendering
-    remark([])
-  )
-  .use(
-    // this prefixes all image tags in a post
     prefix({
-      prefix: 'brian/img',
+      prefix: 'img',
       selector: 'img',
     })
   )
+
+  // gather all posts into a `posts` collection. this needs to go before
+  // permalinks because it overwrites `.path` info
   .use(
-    // gather posts into a collection
-    // needs to go before permalinks() because it blindly overwrites .path
     collections({
       posts: {
         pattern: '_posts/*.html',
@@ -50,14 +52,16 @@ var app = metalsmith(__dirname)
       },
     })
   )
+
+  // create a custom permalink scheme for all posts
   .use(
-    // create custom permalink scheme for all posts
     permalinks({
       pattern: '_posts/*.html',
     })
   )
+
+  // create an atom feed of all posts at feed.xml
   .use(
-    // create an atom feed of all posts at feed.xml
     feed({
       collection: 'posts',
       destination: 'feed.xml',
@@ -86,8 +90,9 @@ var app = metalsmith(__dirname)
     })
   )
   .use(ignore(['css/build.css']))
+
+  // render content into nunjucks templates
   .use(
-    // render content into nunjucks templates
     layouts({
       pattern: '**/*.html',
       engine: 'nunjucks',
@@ -100,10 +105,12 @@ var app = metalsmith(__dirname)
       default: 'post.njk',
     })
   )
+
+  // add /brian to relevant URLs
   .use(
     prefix({
       prefix: 'brian',
-      selector: 'a, link, script',
+      selector: 'a, link, script, img',
     })
   )
 

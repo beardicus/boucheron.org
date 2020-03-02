@@ -1,7 +1,7 @@
-var sharp = require('metalsmith-sharp')
-var htmlMinifier = require('metalsmith-html-minifier')
+const minify = require('metalsmith-html-minifier')
+const sharp = require('metalsmith-sharp')
 
-var app = require('./metalsmith')
+const app = require('./metalsmith')
 
 app
   .use(
@@ -26,7 +26,7 @@ app
       ],
     })
   )
-  .use(htmlMinifier())
+  .use(minify())
   .build(function(err) {
     if (err) throw err
   })
