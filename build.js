@@ -1,9 +1,11 @@
 const minify = require('metalsmith-html-minifier')
 const sharp = require('metalsmith-sharp')
+const drafts = require('metalsmith-drafts')
 
 const app = require('./metalsmith')
 
 app
+  .use(drafts())
   .use(
     // resize and sharpen images
     sharp({
