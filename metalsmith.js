@@ -1,21 +1,21 @@
-var metalsmith = require('metalsmith')
+const metalsmith = require('metalsmith')
 
 // metalsmith plugins
-var cleanCSS = require('metalsmith-clean-css')
-var collections = require('metalsmith-collections')
-var concat = require('metalsmith-concat')
-var feed = require('metalsmith-feed-atom')
-var fingerprint = require('metalsmith-fingerprint')
-var ignore = require('metalsmith-ignore')
-var layouts = require('metalsmith-layouts')
-var prefix = require('metalsmith-prefix')
+const cleanCSS = require('metalsmith-clean-css')
+const collections = require('metalsmith-collections')
+const concat = require('metalsmith-concat')
+const feed = require('metalsmith-feed-atom')
+const fingerprint = require('metalsmith-fingerprint')
+const ignore = require('metalsmith-ignore')
+const layouts = require('metalsmith-layouts')
+const prefix = require('metalsmith-prefix')
 
 // local metalsmith plugins
-var remark = require('./lib/remark')
-var permalinks = require('./lib/permalinks')
+const remark = require('./lib/remark')
+const permalinks = require('./lib/permalinks')
 
 // do the thing
-var app = metalsmith(__dirname)
+const app = metalsmith(__dirname)
   .metadata({
     title: 'Brian Boucheron',
     url: 'https://boucheron.org/brian',
