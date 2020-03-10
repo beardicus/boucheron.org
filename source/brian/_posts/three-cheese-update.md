@@ -38,5 +38,5 @@ Now that everything is all bagged up, my cheese cave is a bit boring. Besides th
 
 Now that summer is upon us, I doubt I'll want to spend hours in the kitchen with the stove on, so I might have to concentrate on quicker and easier cheese recipes. I'm thinking summer salads might need some crumbly blue cheeses involved, so perhaps I'll make it my goal to get more acquainted with that particular mold in the very near future...
 
-[cream cheese]: http://boucheron.org/brian/2012/05/cream-cheesy-bagels
-[provolone]: http://boucheron.org/brian/2012/04/fail-cheese
+[cream cheese]: /brian/2012/05/cream-cheesy-bagels
+[provolone]: /brian/2012/04/fail-cheese
