@@ -24,6 +24,7 @@ const app = metalsmith(__dirname)
     description: 'Occasional writing about stuff and also things',
   })
   .source('source')
+  .ignore(['.DS_Store'])
   .destination('build')
   .clean(false)
 
