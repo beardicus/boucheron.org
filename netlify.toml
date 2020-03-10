@@ -1,0 +1,9 @@
+[build]
+publish = "build"
+command = "node build.js"
+
+[[redirects]]
+  from = "/"
+  to = "/brian/"
+  status = 302
+  force = true
