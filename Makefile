@@ -7,7 +7,7 @@ build: node_modules clean ## do a full build w/ image optimization
 	node build.js
 
 clean: ## remove the build directory
-	rm -rf build/brian
+	rm -rf build
 
 node_modules: package.json
 	npm install

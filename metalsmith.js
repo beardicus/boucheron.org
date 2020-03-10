@@ -11,19 +11,20 @@ const layouts = require('metalsmith-layouts')
 const prefix = require('metalsmith-prefix')
 
 // local metalsmith plugins
-const remark = require('./lib/remark')
-const permalinks = require('./lib/permalinks')
+const remark = require('./lib/metalsmith-remark')
+const permalinks = require('./lib/metalsmith-permalinks')
+const strip = require('./lib/metalsmith-strip')
 
 // do the thing
 const app = metalsmith(__dirname)
   .metadata({
     title: 'Brian Boucheron',
-    url: 'https://boucheron.org/brian',
+    url: 'https://boucheron.org/',
     author: 'Brian Boucheron',
     description: 'Occasional writing about stuff and also things',
   })
-  .source('./source')
-  .destination('./build/brian')
+  .source('source')
+  .destination('build')
   .clean(false)
 
   // custom markdown rendering pipeline
@@ -46,7 +47,7 @@ const app = metalsmith(__dirname)
   .use(
     collections({
       posts: {
-        pattern: '_posts/*.html',
+        pattern: 'brian/_posts/*.html',
         sortBy: 'date',
         reverse: true,
       },
@@ -56,7 +57,13 @@ const app = metalsmith(__dirname)
   // create a custom permalink scheme for all posts
   .use(
     permalinks({
-      pattern: '_posts/*.html',
+      pattern: 'brian/_posts/*.html',
+    })
+  )
+
+  .use(
+    strip({
+      pattern: '**/*.html',
     })
   )
 
@@ -64,12 +71,12 @@ const app = metalsmith(__dirname)
   .use(
     feed({
       collection: 'posts',
-      destination: 'feed.xml',
+      destination: 'brian/feed.xml',
       limit: 100,
       metadata: {
         title: 'Brian Boucheron',
         author: 'Brian Boucheron',
-        url: 'https://boucheron.org/brian/',
+        url: 'https://boucheron.org/brian',
       },
     })
   )
@@ -103,14 +110,6 @@ const app = metalsmith(__dirname)
       },
       directory: 'templates',
       default: 'post.njk',
-    })
-  )
-
-  // add /brian to relevant URLs
-  .use(
-    prefix({
-      prefix: 'brian',
-      selector: 'a, link, script, img',
     })
   )
 
