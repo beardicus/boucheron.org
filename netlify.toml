@@ -7,3 +7,8 @@ command = "node build.js"
   to = "/brian/"
   status = 302
   force = true
+
+[[redirects]]
+  from = "/brian/feed"
+  to = "/brian/feed.xml"
+  
