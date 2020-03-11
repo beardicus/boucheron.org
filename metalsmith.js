@@ -102,7 +102,7 @@ const app = metalsmith(__dirname)
   // render content into nunjucks templates
   .use(
     layouts({
-      pattern: '**/*.html',
+      pattern: 'brian/**/*.html',
       engine: 'nunjucks',
       engineOptions: {
         filters: {
