@@ -4,7 +4,7 @@ const metalsmith = require('metalsmith')
 const cleanCSS = require('metalsmith-clean-css')
 const collections = require('metalsmith-collections')
 const concat = require('metalsmith-concat')
-const feed = require('metalsmith-feed-atom')
+const feed = require('./lib/metalsmith-feed-atom')
 const fingerprint = require('metalsmith-fingerprint')
 const ignore = require('metalsmith-ignore')
 const layouts = require('metalsmith-layouts')
@@ -76,7 +76,11 @@ const app = metalsmith(__dirname)
       limit: 100,
       metadata: {
         title: 'Brian Boucheron',
-        author: 'Brian Boucheron',
+        author: {
+          name: 'Brian Boucheron',
+          uri: 'https://boucheron.org/brian',
+          email: 'brian@boucheron.org',
+        },
         url: 'https://boucheron.org/brian',
       },
     })
