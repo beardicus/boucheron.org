@@ -1,0 +1,13 @@
+{
+	"folders": [
+		{
+			"path": "."
+		}
+	],
+	"settings": {
+		"workbench.colorTheme": "City Lights",
+		"workbench.preferredDarkColorTheme": "City Lights",
+		"workbench.preferredLightColorTheme": "City Lights",
+		"workbench.iconTheme": "city-lights-icons-vsc"
+	}
+}
