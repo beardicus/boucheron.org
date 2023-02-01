@@ -16,9 +16,6 @@ node_modules: package.json
 publish: ## push site to github for netlify to build
 	git push origin
 
-dat-publish: build ## build the site and sync to dat
-	rsync -rh ./build/ ~/Sites/boucheron.org/ --exclude '*.gz'
-
 .PHONY: clean build dev publish help
 
 help:
