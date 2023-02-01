@@ -29,6 +29,6 @@ app
     })
   )
   .use(minify())
-  .build(function(err) {
+  .build((err) => {
     if (err) throw err
   })

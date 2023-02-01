@@ -9,6 +9,7 @@ const fingerprint = require('metalsmith-fingerprint')
 const ignore = require('metalsmith-ignore')
 const layouts = require('metalsmith-layouts')
 const prefix = require('metalsmith-prefix')
+const drafts = require('@metalsmith/drafts')
 
 // local metalsmith plugins
 const remark = require('./lib/metalsmith-remark')
@@ -27,6 +28,10 @@ const app = metalsmith(__dirname)
   .ignore(['.DS_Store'])
   .destination('build')
   .clean(false)
+
+  // yeet drafts but not in dev
+  // this can't go in dev.js because it needs to be before collections
+  .use(drafts(process.env.NODE_ENV === 'dev'))
 
   // custom markdown rendering pipeline
   .use(
@@ -96,6 +101,8 @@ const app = metalsmith(__dirname)
       output: 'css/build.css',
     })
   )
+
+  // fingerprint the css file for cache-busting then ignore the original
   .use(
     fingerprint({
       pattern: 'css/build.css',

@@ -1,7 +1,7 @@
 .DEFAULT_GOAL := help
 
 dev: node_modules clean ## start a dev server and lightweight build
-	node dev.js
+	export NODE_ENV=dev; node dev.js
 
 build: node_modules clean ## do a full build w/ image optimization
 	node build.js
