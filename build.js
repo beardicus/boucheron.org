@@ -1,24 +1,24 @@
-const minify = require('metalsmith-html-minifier')
-const sharp = require('metalsmith-sharp')
+const minify = require("metalsmith-html-minifier");
+const sharp = require("metalsmith-sharp");
 
-const app = require('./metalsmith')
+const app = require("./metalsmith");
 
 app
   .use(
     // resize and sharpen images
     sharp({
-      src: 'img/*.jpg',
+      src: "img/*.jpg",
       methods: [
         {
-          name: 'resize',
+          name: "resize",
           args: [800, null], // default filter is lanczos
         },
         {
-          name: 'sharpen',
+          name: "sharpen",
           args: [1, 1, 0.5],
         },
         {
-          name: 'jpeg',
+          name: "jpeg",
           args: {
             quality: 40,
           },
@@ -28,5 +28,5 @@ app
   )
   .use(minify())
   .build((err) => {
-    if (err) throw err
-  })
+    if (err) throw err;
+  });
