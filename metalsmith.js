@@ -1,17 +1,19 @@
 const metalsmith = require('metalsmith')
 
 // metalsmith plugins
-const cleanCSS = require('metalsmith-clean-css')
-const collections = require('metalsmith-collections')
-const concat = require('metalsmith-concat')
-const feed = require('./lib/metalsmith-feed-atom')
-const fingerprint = require('metalsmith-fingerprint')
-const ignore = require('metalsmith-ignore')
-const layouts = require('metalsmith-layouts')
-const prefix = require('metalsmith-prefix')
+const collections = require('@metalsmith/collections')
+const layouts = require('@metalsmith/layouts')
 const drafts = require('@metalsmith/drafts')
+const remove = require('@metalsmith/remove')
+
+// 3rd party metalsmith plugins
+const cleanCSS = require('metalsmith-clean-css')
+const concat = require('metalsmith-concat')
+const fingerprint = require('metalsmith-fingerprint')
+const prefix = require('metalsmith-prefix')
 
 // local metalsmith plugins
+const feed = require('./lib/metalsmith-feed-atom')
 const remark = require('./lib/metalsmith-remark')
 const permalinks = require('./lib/metalsmith-permalinks')
 const strip = require('./lib/metalsmith-strip')
@@ -30,7 +32,7 @@ const app = metalsmith(__dirname)
   .clean(false)
 
   // yeet drafts but not in dev
-  // this can't go in dev.js because it needs to be before collections
+  // this can't go in dev.js because it needs to happen before collections()
   .use(drafts(process.env.NODE_ENV === 'dev'))
 
   // custom markdown rendering pipeline
@@ -108,7 +110,7 @@ const app = metalsmith(__dirname)
       pattern: 'css/build.css',
     })
   )
-  .use(ignore(['css/build.css']))
+  .use(remove(['css/build.css']))
 
   // render content into nunjucks templates
   .use(
