@@ -1,0 +1,14 @@
+{% layout "base.liquid" %}
+
+{% block header %}
+<h1 class="homepage">index of /brian</h1>
+<p>This site contains stuff and things from Brian Boucheron. I am a graphic designer turned technical writer, interested in cheese, robots, computers, and general nerdery. You can find me on <a rel="me" href="https://hachyderm.io/@beardicus">Mastodon</a> and <a href="https://github.com/beardicus">GitHub</a>.</p>
+{% endblock %}
+
+{% block content %}
+<ul class="listing">
+  {%- for post in posts %}
+    <li><a href="{{ post.path }}">{{ post.title }}</a><div class="date"><a href="{{ post.path }}">{{ post.date | date: "%b %d, %Y"}}</a></div></li>
+  {%- endfor %}
+</ul>
+{% endblock %}

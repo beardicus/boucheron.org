@@ -1,14 +1,13 @@
 [build]
-publish = "build"
-command = "node build.js"
+publish = "dist"
+command = "make build"
 
 [[redirects]]
-  from = "/"
-  to = "/brian/"
-  status = 302
-  force = true
+from = "/"
+to = "/brian/"
+status = 302
+force = true
 
 [[redirects]]
-  from = "/brian/feed"
-  to = "/brian/feed.xml"
-  
+from = "/brian/feed"
+to = "/brian/feed.xml"

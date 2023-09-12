@@ -1,0 +1,39 @@
+<!doctype html>
+<html class="no-js" lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>{{ title }} &ndash; Brian Boucheron</title>
+        <meta name="description" content="{{ description }}">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="/index.css">
+        <link rel="manifest" href="/site.webmanifest">
+        <link rel="alternate" href="/brian/feed.xml" type="application/atom+xml" title="Brian Boucheron RSS Feed">
+        
+        <!-- opengraph unfurl stuff -->
+        <meta property="og:url" content="https://boucheron.org{{ path }}"/>
+        <meta property="og:title" content="{{ title }}"/>
+        <meta property="og:description" content="{{ description }}"/>
+        <meta property="og:site_name" content="Brian Boucheron"/>
+
+        <!-- twitter (lol) unfurl stuff -->
+        <meta name="twitter:card" content="summary">
+        <meta name="twitter:domain" value="boucheron.org" />
+        <meta name="twitter:title" value="{{ title }}" />
+        <meta name="twitter:description" value="{{ description }}" />
+        <meta name="twitter:url" value="https://boucheron.org{{ path }}" />
+    </head>
+    <body>
+      <div id="wrapper">
+        <header class="site">
+          {% block header %}
+          <nav>
+            <h1>&#8617;&nbsp;<a href="/brian/">return to  /brian</a></h1>
+          </nav>
+          {% endblock %}
+        </header>
+        {% block content %}
+        {% endblock %}
+      </div>
+    </body>
+</html>

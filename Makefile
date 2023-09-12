@@ -1,13 +1,16 @@
 .DEFAULT_GOAL := help
 
-dev: node_modules clean ## start a dev server and lightweight build
-	export NODE_ENV=dev; node dev.js
+dev: node_modules clean ## start a dev build and server
+	export NODE_ENV=dev; node build.js
+	bash dev.sh
 
-build: node_modules clean ## do a full build w/ image optimization
+build: node_modules clean ## do a full production build
 	node build.js
+	npx parcel build "site/*.html" "site/brian/**/*.html"
+	cp -a site/apple-touch-icon.png site/robots.txt site/favicon* dist
 
-clean: ## remove the build directory
-	rm -rf build
+clean: ## remove the build directories
+	rm -rf site/brian dist
 
 node_modules: package.json
 	npm install

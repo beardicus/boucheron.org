@@ -1,6 +1,19 @@
 # boucheron.org
 
-These are the innards of [boucheron.org], a [metalsmith] blog.
+These are the innards of [boucheron.org/brian](https://boucheron.org/brian).
+It uses:
 
-[boucheron.org]: https://boucheron.org/brian
-[metalsmith]: http://www.metalsmith.io/
+- [remark](https://remark.js.org) for Markdown processing
+- [parcel](https://parceljs.org) for ensquishening
+- [liquid](https://liquidjs.com) for very basic templating
+- [obsidian](https://obsidian.md) for writing and editing
+
+TODO:
+
+- [ ] add JSON feed (https://www.jsonfeed.org/version/1.1/)
+- [x] make images pictures/srcset
+- [ ] add tag index pages
+- [ ] add date index pages
+- [ ] add sitemap
+- [ ] handle images that aren't full column width
+- [ ] add lightbox image embiggening
