@@ -19,7 +19,7 @@ It was, sadly enough, a challenge though. Two and a half miles to
 Ashfield proper, quite a bit of that is hill, and I am definitely
 out of shape. I'm thinking it will become a good Sunday routine:
 write letters all morning, ride to town and mail them, pick up some
-[beer][https://www.berkshire-brewing.com], eat a slice of pizza, zip
+[beer](https://www.berkshire-brewing.com), eat a slice of pizza, zip
 down the other side of the hill at dangerous speeds. By the end of
 the summer perhaps I'll be used to living in an area with actual
 elevation changes!
