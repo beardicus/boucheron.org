@@ -7,7 +7,7 @@ import { map, pick, pipe } from 'ramda'
 
 import markdownRender from './lib/markdownRender.js'
 import templateRender from './lib/templateRender.js'
-import feedRender from './lib/feedRender.js'
+import { atomFeed, jsonFeed } from './lib/feedRender.js'
 
 // TODO:
 // generate tag index pages
@@ -93,10 +93,18 @@ const renderMarkdown = (file) => ({
   content: markdownRender(file.content),
 })
 
-const addFeed = (files) => {
+const addAtomFeed = (files) => {
   const feed = {
     filePath: '/brian/feed.xml',
-    content: feedRender(files.filter((file) => file.layout === 'post')),
+    content: atomFeed(files.filter((file) => file.layout === 'post')),
+  }
+  return [...files, feed]
+}
+
+const addJsonFeed = (files) => {
+  const feed = {
+    filePath: '/brian/feed.json',
+    content: jsonFeed(files.filter((file) => file.layout === 'post')),
   }
   return [...files, feed]
 }
@@ -123,6 +131,7 @@ pipe(
   addPrevNextLinks,
   addHomepage,
   map(renderMarkdown),
-  addFeed, // markdown needs to be rendered, but not put into templates yet
+  addAtomFeed, // markdown needs to be rendered, but not put into templates yet
+  addJsonFeed,
   map(pipe(renderTemplate, writeFile))
 )('./obsidian-vault/Blog/Posts/*.md')
