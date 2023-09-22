@@ -13,6 +13,9 @@ build: node_modules clean ## do a full production build
 clean: ## remove the build directories
 	rm -rf site/brian dist
 
+wipe: clean ## also remove the parcel cache and node_modules
+	rm -rf .parcel-cache node_modules
+
 node_modules: package.json
 	npm install
 	touch node_modules
@@ -20,7 +23,7 @@ node_modules: package.json
 publish: ## push site to github for netlify to build
 	git push origin
 
-.PHONY: clean build dev publish help
+.PHONY: clean wipe build dev publish help
 
 help:
 	@grep -E '^[a-zA-Z_-]+:.*?## .*$$' 'Makefile' | sort | awk 'BEGIN {FS = ":.*?## "}; {printf "\033[36m%-30s\033[0m %s\n", $$1, $$2}'
