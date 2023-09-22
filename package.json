@@ -12,6 +12,7 @@
     "gray-matter": "^4.0.3",
     "image-size": "^1.0.2",
     "liquidjs": "^10.9.2",
+    "parcel-resolver-ignore": "^2.1.5",
     "ramda": "^0.29.0",
     "rehype-autolink-headings": "^7.0.0",
     "rehype-prism-plus": "^1.6.3",
@@ -24,9 +25,7 @@
     "unified": "^11.0.3",
     "unist-util-visit": "^5.0.0",
     "xast-util-feed": "^2.0.0",
-    "xast-util-to-xml": "^4.0.0"
-  },
-  "devDependencies": {
+    "xast-util-to-xml": "^4.0.0",
     "@parcel/packager-raw-url": "^2.9.3",
     "@parcel/packager-xml": "^2.9.3",
     "@parcel/resolver-glob": "^2.9.3",
@@ -38,5 +37,8 @@
   "alias": {
     "./*": "./site/$1",
     "./brian/*": "./site/brian/$1"
-  }
+  },
+  "parcelIgnore": [
+    "feed.json"
+  ]
 }
