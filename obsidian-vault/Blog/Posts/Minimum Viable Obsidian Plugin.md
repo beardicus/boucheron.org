@@ -1,5 +1,5 @@
 ---
-draft: true
+draft: false
 title: Minimum Viable Obsidian Plugin
 subtitle: 
 date: 2024-05-08 15:56:19
