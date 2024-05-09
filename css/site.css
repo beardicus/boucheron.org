@@ -116,6 +116,15 @@ footer {
   margin-top: 4rem;
 }
 
+figure {
+  margin: 1rem 0;
+}
+
+figcaption {
+  margin-top: -1rem;
+  font-size: 0.9rem;
+}
+
 /* responsive bits */
 
 @media only screen and (max-width: 1000px) {
