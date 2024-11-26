@@ -7,7 +7,7 @@ import { map, pick, pipe } from 'ramda'
 
 import markdownRender from './lib/markdownRender.js'
 import templateRender from './lib/templateRender.js'
-import { atomFeed, jsonFeed } from './lib/feedRender.js'
+import { atomFeed } from './lib/feedRender.js'
 
 // TODO:
 // generate tag index pages
@@ -101,14 +101,6 @@ const addAtomFeed = (files) => {
   return [...files, feed]
 }
 
-const addJsonFeed = (files) => {
-  const feed = {
-    filePath: '/brian/feed.json',
-    content: jsonFeed(files.filter((file) => file.layout === 'post')),
-  }
-  return [...files, feed]
-}
-
 // takes an object with html `.content` and runs it through liquid templates
 // returns the same object with `.content` rendered in templates
 const renderTemplate = (file) => {
@@ -132,6 +124,5 @@ pipe(
   addHomepage,
   map(renderMarkdown),
   addAtomFeed, // markdown needs to be rendered, but not put into templates yet
-  addJsonFeed,
-  map(pipe(renderTemplate, writeFile))
+  map(pipe(renderTemplate, writeFile)),
 )('./obsidian-vault/Blog/Posts/*.md')
