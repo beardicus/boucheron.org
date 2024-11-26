@@ -8,7 +8,6 @@ build: node_modules clean ## do a full production build
 	node build.js
 	npx parcel build "site/*.html" "site/brian/**/*.html"
 	cp -a site/apple-touch-icon.png site/robots.txt site/favicon* dist
-	cp -a site/brian/feed.json dist/brian
 
 clean: ## remove the build directories
 	rm -rf site/brian dist
